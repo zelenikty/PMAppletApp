@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 13.867">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.5;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Group_93" data-name="Group 93" class="cls-1" transform="translate(-1290.004 80.002)">
+    <path id="Union_272" data-name="Union 272" class="cls-2" d="M3.2,13.867V12.8H5.329V10.668h5.333V12.8H12.8v1.066ZM1,10.668a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0H15a1,1,0,0,1,1,1V9.668a1,1,0,0,1-1,1ZM1.067,9.6H14.934V1.067H1.067Z" transform="translate(1290.004 -80.002)"/>
+  </g>
+</svg>

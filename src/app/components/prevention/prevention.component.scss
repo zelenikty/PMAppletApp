@@ -1,0 +1,15 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+section {
+    padding-top: 0;
+    .prevention-block {
+        background-color: $block-color;
+        padding: 15px 20px;
+        min-height: 400px;
+        min-width: 500px;
+        border-radius: 5px;
+    }
+
+}
+

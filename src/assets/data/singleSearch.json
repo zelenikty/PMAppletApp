@@ -1,0 +1,20 @@
+[
+    {
+        "request": {
+            "types": [
+                {
+                    "id": "1",
+                    "value": "Type 1"
+                },
+                {
+                    "id": "2",
+                    "value": "Type 2"
+                },
+                {
+                    "id": "3",
+                    "value": "Type 3"
+                }
+            ]
+        }
+    }
+]

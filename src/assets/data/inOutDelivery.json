@@ -1,0 +1,46 @@
+[
+    {
+        "request": {
+            "desksTypes": [
+                {
+                    "id": "1",
+                    "value": "Option 1"
+                },
+                {
+                    "id": "2",
+                    "value": "Option 2"
+                },
+                {
+                    "id": "3",
+                    "value": "Option 3"
+                },
+                {
+                    "id": "4",
+                    "value": "Option 4"
+                },
+                {
+                    "id": "5",
+                    "value": "Unallocated"
+                },
+                {
+                    "id": "6",
+                    "value": "Allocated"
+                }
+            ],
+            "vaultTypes": [
+                {
+                    "id": "1",
+                    "value": "OZL"
+                },
+                {
+                    "id": "2",
+                    "value": "vault 2"
+                },
+                {
+                    "id": "3",
+                    "value": "vault 3"
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,40 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+//Payment Delivery Tab Styles
+section {
+    padding-top: 0;
+}
+
+.payment-delivery-block {
+    background-color: $block-color;
+    padding: 15px 20px;
+    border-radius: 5px;
+    .row {
+        .col-9 {
+            min-width: 78%;
+            .row {     
+                margin-bottom: 12px;           
+            .col {
+                .label-text {
+                    margin-right: 40px;
+                    padding-top: 5px;
+                }
+                .form-group {
+                    margin-right: 10px;
+                }
+            } 
+            
+            }
+        }
+        .col-3 {
+            max-width: 22%;
+        }
+    }
+}
+
+.form-group {
+    input {
+        border-radius: 3px;
+    }
+}

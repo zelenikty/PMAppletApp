@@ -1,0 +1,15 @@
+{
+  "login": [
+    {
+      "id": 1,
+			"email": "admin@collegeprep.org",
+			"fullName": "Janith Widarshana",
+			"roleId": 1,
+			"accessToken": "tokenid",
+			"role": {
+				"id": 1,
+				"name": "SystemAdmin"
+			}
+    }
+  ]
+}

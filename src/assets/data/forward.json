@@ -1,0 +1,50 @@
+[
+    {
+        "request": {
+            "desksTypes": [
+                {
+                    "id": "1",
+                    "value": "Option 1"
+                },
+                {
+                    "id": "2",
+                    "value": "Option 2"
+                },
+                {
+                    "id": "3",
+                    "value": "Option 3"
+                },
+                {
+                    "id": "4",
+                    "value": "Option 4"
+                },
+                {
+                    "id": "5",
+                    "value": "Unallocated"
+                },
+                {
+                    "id": "6",
+                    "value": "Allocated"
+                }
+            ],
+            "priceTypes": [
+                {
+                    "id": "1",
+                    "value": "Type 1"
+                },
+                {
+                    "id": "2",
+                    "value": "Type 2"
+                },
+                {
+                    "id": "3",
+                    "value": "Type 3"
+                },
+                {
+                    "id": "4",
+                    "value": "OZ"
+                }
+            ]
+        }
+    }
+]

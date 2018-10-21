@@ -1,0 +1,97 @@
+[
+    {
+        "request": {
+            "outputControl": {
+                "contractNo": "1504",
+                "cpId": "0835-909945-7",
+                "cpBU1": "M",
+                "cpBU2": "A",
+                "cpDes": "<b> 1723 - Kassa Buchmentall <br/>  0012 - Metall Name 1 <br/> 0011 - Metall Name 2 <br/> 0009 - Metal Name 3 </b>",
+                "fibkcd": "17231983",
+                "bookId": "ARDE",
+                "tradeId": "DEAR1723",
+                "flOld": "",
+                "tradeCode": "ARDE",
+                "tradeDate": "2018-09-23",
+                "desk": "Unallocated",
+                "confirmTo": "1723-1983",
+                "confirmDes": "Sed ut perspiciatis unde omnis iste natus error sit volupatatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illlo inventore vertatis et quasi.",
+                "paymentType": "SWIFT",
+                "validation": {
+                    "type": "warning"
+                }
+            },
+            "references": {
+                "contractNo": "1504",
+                "cpId": "0835-909945-7",
+                "cpBU1": "M",
+                "cpBU2": "A",
+                "cpDes": "<b> ABCD <br/>  EFGHIJ <br/> KLMNOPQ </b>",
+                "fibkcd": "17231983",
+                "bookId": "ARDE",
+                "tradeId": "DEAR1723",
+                "flOld": "",
+                "tradeCode": "ARDE",
+                "tradeDate": "2018-09-23",
+                "desk": "Unallocated",
+                "validation": {
+                    "type": "warning"
+                }
+            },
+            "technicalInfos": {
+                "contractNo": "1504",
+                "cpId": "0835-909945-7",
+                "cpBU1": "M",
+                "cpBU2": "A",
+                "cpDes": "<b> ABCD <br/>  EFGHIJ <br/> KLMNOPQ </b>",
+                "fibkcd": "17231983",
+                "bookId": "ARDE",
+                "tradeId": "DEAR1723",
+                "flOld": "",
+                "tradeCode": "ARDE",
+                "tradeDate": "2018-09-23",
+                "desk": "Unallocated",
+                "validation": {
+                    "type": "warning"
+                }
+            },
+            "repetition": {
+                "contractNo": "1504",
+                "cpId": "0835-909945-7",
+                "cpBU1": "M",
+                "cpBU2": "A",
+                "cpDes": "<b> Conflict and Co.Ltd <br/>  Stauffacherstrasse 1 <br/> Positech </b> 8022 Zurich",
+                "fibkcd": "",
+                "bookId": "",
+                "tradeId": "",
+                "flOld": "",
+                "tradeCode": "",
+                "tradeDate": "2018-09-23",
+                "desk": "Allocated",
+                "validation": {
+                    "type": "warning"
+                }
+            },
+            "display": {
+                "contractNo": "1504",
+                "cpId": "0835-909945-7",
+                "cpBU1": "M",
+                "cpBU2": "A",
+                "cpDes": "<b> ABCD <br/>  EFGHIJ <br/> KLMNOPQ </b>",
+                "fibkcd": "17231983",
+                "bookId": "ABC",
+                "tradeId": "231783",
+                "flOld": "",
+                "tradeCode": "ABC",
+                "tradeDate": "2018-09-23",
+                "desk": "Unallocated",
+                "validation": {
+                    "type": "warning"
+                },
+                "orderDes": "<b> ABCD <br/>  EFGHIJ <br/> KLMNOPQ </b>",
+                "debitOrderDes": "<b> ABCD <br/>  EFGHIJ <br/> KLMNOPQ </b>",
+                "creditOrderDes": "<b> ABCD <br/>  EFGHIJ <br/> KLMNOPQ </b>"
+            }
+        }
+    }
+]

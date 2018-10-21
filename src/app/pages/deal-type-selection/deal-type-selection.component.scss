@@ -1,0 +1,100 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+// Selection Deal Types Styles
+.section-deal-type {
+    width: 100%;
+    height: calc( 100vh - 75px);
+    padding: 20px 50px;
+    h5 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        a {
+            font-size: 14px;
+            font-weight: bold;
+            color: #0099CC;
+        }
+        .arrow {
+            width: 10px;
+            height: 10px;
+            background: url('/assets/i/right-arrow.svg');
+            background-size: 10px 10px;
+            margin-top: 3px;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+        .sub-section {
+            font-size: 14px;
+        }
+    }
+    .deal-type-names {
+        width: 50%;
+        margin: 120px auto 0 auto;
+        h4 {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+        .allocated-types {
+            h4 {
+                margin-left: 150px;
+            }
+        }
+    }
+
+    // Styles for Allocated and Unallocated Types
+    .deal-types {
+        width: 50%;
+        margin: 0 auto;
+        .unallocated-types,
+        .allocated-types {
+            .flex-fill {
+                width: 180px;
+            }
+            .deal-type-link {
+                .deal-box {
+                    border: 1px solid $border-color;
+                    width: 160px;
+                    height: 60px;
+                    margin: 5px;
+                    border-radius: 5px;
+                    position: relative;
+                    -webkit-transition: background-color 0.3s, cursor 0.3s;
+                    transition: background-color 0.3s, cursor 0.3s;
+                    font-size: $h5-font-size;
+                    color: $header-color;
+                    font-weight: 500;
+                    -webkit-transition: color 0.3s, background-color 0.3s;
+                    transition: color 0.3s, background-color 0.3s;
+                    .deal-number {
+                        font-weight: 500;
+                        position: absolute;
+                        right: 10px;
+                        top: 5px;
+                        font-size: 12px;
+                    }
+                    .deal-name {
+                        position: relative;
+                        top: 20px;
+                    }
+                    &.allocated-box{
+                        width: 190px;
+                    }
+                }
+                .deal-box:hover,
+                .deal-box:active {
+                    color: $content-text-white;
+                    background-color: $link-text-blue;
+                    border-color: $link-text-blue;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+    }
+}
+
+.action-panel{
+    border: none;
+    background-color: $body-color;
+}

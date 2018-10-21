@@ -1,0 +1,213 @@
+<div class="capture-panel">
+    <!-- Header -->
+    <span *ngIf="pageTypeName === pageTypes.display">
+        <h2 class="page-title mb-1">
+            Display
+        </h2>
+    </span>
+    <span *ngIf="pageTypeName === ''">
+        <h2 class="page-title mb-1" [ngClass]="{'label-text-buy': buyOrSellType === buy, 'label-text-sell' : buyOrSellType === sell }">
+            {{ pageTitle}}
+        </h2>
+    </span>
+
+    <div class="bold-text text-center">Cancel/Correction</div>
+    <div class="d-flex sub-title">
+        <div>
+            <h2 class="bold-text">{{ pageTypeName === pageTypes.display ? 'Display' : 'Capture'}} </h2>
+        </div>
+        <div class=" ml-auto p-2">
+
+            <span *ngIf="buyOrSellType === '' && enteredResult && enteredResult.type == enteredResultTypes.success && validationWarnings.length === 0 && validationErrors.length === 0 && !serverError">
+                <h5 class="bold-text">Contract {{enteredResult.contractNo}} entered</h5>
+            </span>
+            <span *ngIf="activeTab === tabTypeIds.contractData && buyOrSellType !== '' && enteredResult && validationWarnings.length === 0 && validationErrors.length === 0 && !serverError">
+                <h5 class="bold-text">{{ buyOrSellType === buy ? 'Buy-' : 'Sell-'}}Contract
+                    {{enteredResult.contractNo}} entered</h5>
+            </span>
+            <span *ngIf="(validationWarnings.length > 0 || validationErrors.length > 0) && !serverError">
+                <h5 class="bold-text " [class]="validationErrors.length > 0 ? 'error-text':'warning-text'">Contract
+                    has {{ validationErrors.length > 0 ? 'errors' : 'warning' }} </h5>
+            </span>
+            <span *ngIf="validationWarnings.length === 0 && validationErrors.length === 0 && !enteredResult && !serverError">
+                <h5 class="bold-text">Contract is correct</h5>
+            </span>
+            <span *ngIf="activeTab > 1 && enteredResult && enteredResult.type == enteredResultTypes.cancel && !serverError">
+                <h5 class="bold-text">Cancel/Correction: Contract {{enteredResult.contractNo}} canceled</h5>
+            </span>
+            <span *ngIf="serverError">
+                <h5 class="bold-text error-text">Server error</h5>
+            </span>
+        </div>
+    </div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="captureForm">
+        <div class="row">
+            <!-- Left panel start -->
+            <div class="col-md-6 left-panel pr-0">
+                <div class="d-flex flex-row">
+                    <div class="pr-0">
+                        <div class="d-flex tab-capture flex-column h-100 mr-3">
+                            <div class="mb-auto btn-capturing pmw-150"> {{pageTypeName === pageTypes.display ?
+                                'ENTERED' : 'CAPTURING'}}</div>
+                            <div *ngIf="pageTypeName === pageTypes.display" class="bold-text d-flex align-items-center mb-3">
+                                Type of Order
+                            </div>
+                            <div *ngIf="buyOrSellType !== ''" class="d-flex flex-row align-items-center mb-1">
+                                <div class="form-group mb-0 pmw-125 w-100">
+                                    <app-dropdown (contextmenu)="$event.stopPropagation();" formControlName="dealType"
+                                        ngDefaultControl [options]="dealTypes" [placeholder]="captureData.dealType"
+                                        [isReadOnly]="isReadOnly"></app-dropdown>
+
+                                </div>
+
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="label-text"> {{pageTypeName === pageTypes.display ? 'Order No.' : 'Contract
+                                    No.' }}</div>
+                                <div [hidden]="pageTypeName === pageTypes.display" class="form-group pmw-65 ml-auto mb-0">
+                                    <input type="text" (contextmenu)="$event.stopPropagation();" formControlName="contractNo"
+                                        name="contractNo" class="form-control" [readonly]="captureData.tabType !== tabType.outputControl">
+                                </div>
+                                <div [hidden]="pageTypeName !== pageTypes.display" class="form-group pmw-65 ml-auto mb-0">
+                                    <input type="text" name="contractNo" class="form-control" [readonly]="captureData.tabType !== tabType.outputControl">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-fil counterparty p-3 w-100">
+                        <div class="row">
+                            <div class="col-md-4 pr-0">
+                                <div class="d-flex flex-column">
+                                    <div class="title">{{pageTypeName === pageTypes.display ? 'User ID' :
+                                        'Counterparty'}}</div>
+                                    <div class="d-flex flex-row align-items-center mb-2">
+                                        <div class="label-text pmw-40">ID</div>
+                                        <div class="form-group mb-0 pmw-145">
+                                            <input type="text" (contextmenu)="$event.stopPropagation();"
+                                                formControlName="cpId" name="cpId" class="form-control error-focus"
+                                                mask="AAAA-AAAAAA-A" placeholder="Enter" [readOnly]="isReadOnly  && captureData.tabType !== tabType.outputControl"
+                                                maxlength="14" required [ngClass]="{'error': formControls.cpId.touched && formControls.cpId.invalid || formControls.cpId.invalid && isSubmitted}"
+                                                (blur)="onBlurInput()">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row align-items-center mb-0">
+                                        <div class="label-text pmw-40">{{pageTypeName === pageTypes.display ? 'M/F' :
+                                            'BU'}}</div>
+                                        <div class="form-group mb-0 pmw-100 mr-1">
+                                            <input type="text" (contextmenu)="$event.stopPropagation();"
+                                                formControlName="cpBU1" name="cpBU1" maxlength="4" class="form-control"
+                                                readonly>
+                                        </div>
+                                        <div class="form-group mb-0 pmw-40">
+                                            <input type="text" (contextmenu)="$event.stopPropagation();"
+                                                formControlName="cpBU2" name="cpBU2" maxlength="2" class="form-control"
+                                                readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="d-flex flex-column flex-fill">
+                                    <div class="form-group mb-0">
+                                        <div class="cap-description" [innerHTML]="captureData.cpDes">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- Right panel start -->
+            <div class="col-md-6 right-panel pl-3">
+                <div class="d-flex">
+                    <div class="d-flex  tab-width flex-row align-items-center mb-1">
+                        <div class="label-text w-100">{{pageTypeName === pageTypes.display ? 'AB/CD/EF' : 'FI/BK/CD'}}</div>
+                        <div class="form-group mb-0 pmw-125 w-100 mr-1">
+                            <input type="text" (contextmenu)="$event.stopPropagation();" formControlName="fibkcd"
+                                ngDefaultControl name="fibkcd" mask="000000000000000" class="form-control" placeholder="Enter"
+                                [readOnly]="isReadOnly && captureData.tabType !== tabType.outputControl" [ngClass]="{'error': formControls.fibkcd.touched && formControls.fibkcd.invalid || formControls.fibkcd.invalid && isSubmitted}">
+                        </div>
+                        <div class="form-group mb-0 pmw-100 mr-1">
+                            <app-input-popup [placeholder]="'Add'" [value]="captureData.bookId" name="bookId" type="number"
+                                (contextmenu)="$event.stopPropagation();" formControlName="bookId" ngDefaultControl
+                                [isReadonly]="isReadOnly && captureData.tabType !== tabType.outputControl" [lookupData]="traders"
+                                (add)="onInputAdd('bookId',$event)"></app-input-popup>
+                        </div>
+                        <div class="form-group mb-0 pmw-45">
+                            <input type="text" (contextmenu)="$event.stopPropagation();" formControlName="tradeId" name="tradeId"
+                                class="form-control" [readOnly]="isReadOnly && captureData.tabType !== tabType.outputControl">
+                        </div>
+                    </div>
+                    <div class="ml-auto  tab-width">
+                        <div class="d-flex flex-row  align-items-center mb-1 justify-content-end">
+                            <div class=" tab-label-min">{{pageTypeName === pageTypes.display ? 'Final' :
+                                'Fl Old'}}</div>
+                            <div class="form-group mb-0 pmw-125 w-100">
+                                <app-input-popup [className]="'left-icon'" (contextmenu)="$event.stopPropagation();"
+                                    formControlName="flOld" [value]="captureData.flOld" [type]="'number'" name="flOld"
+                                    ngDefaultControl [isReadonly]="isReadOnly && captureData.tabType !== tabType.outputControl"
+                                    (onKey)="onFlOldChange($event)"></app-input-popup>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="d-flex flex-row  tab-width align-items-center mb-1">
+                        <div class="label-text w-100">{{pageTypeName === pageTypes.display ? 'Value' : 'Trader'}}</div>
+                        <div class="form-group mb-0 pmw-125 w-100 mr-1">
+                            <app-input-popup [placeholder]="'Add'" (contextmenu)="$event.stopPropagation();"
+                                formControlName="tradeId2" [value]="captureData.tradeId" name="trader" ngDefaultControl
+                                [isReadonly]="isReadOnly && captureData.tabType !== tabType.outputControl" [lookupData]="traders"
+                                (add)="onInputAdd('tradeId2',$event)"></app-input-popup>
+                        </div>
+                        <div class="form-group mb-0 trader-lbl mr-1 ">
+                            <input type="text" (contextmenu)="$event.stopPropagation();" formControlName="tradeCode"
+                                class="form-control" readOnly>
+                        </div>
+                    </div>
+                    <div class="ml-auto  tab-width">
+                        <div class="d-flex  flex-row align-items-center mb-1 justify-content-end">
+                            <div class=" tab-label-min ">Desk</div>
+                            <div class="form-group mb-0 ">
+                                <app-dropdown (contextmenu)="$event.stopPropagation();" formControlName="desk"
+                                    ngDefaultControl [options]="deskOptions" [className]="'desk-dp'" [placeholder]="captureData.desk"
+                                    [isReadOnly]="isReadOnly && captureData.tabType !== tabType.outputControl"></app-dropdown>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="d-flex flex-row">
+                    <div class="d-flex flex-column  tab-width">
+                        <div class="d-flex flex-row">
+                            <div class="label-text-mid ">{{pageTypeName === pageTypes.display ? 'Order Date' : 'Trade
+                                Date'}}</div>
+                            <div class="form-group mb-0 pmw-125 w-100 mr-1 mb-1">
+                                <app-date-picker (contextmenu)="$event.stopPropagation();" formControlName="tradeDate"
+                                    ngDefaultControl (dateTimeChange)="changeDateTime($event)" placeholder="DD.MM.YYYY"
+                                    name="date" type="text" [isDate]=true [value]="captureData.tradeDate" className="date-input"
+                                    [defaultDate]="today" [isReadOnly]="isReadOnly && captureData.tabType !== tabType.outputControl"></app-date-picker>
+                            </div>
+                        </div>
+                        <div *ngIf="pageTypeName !== pageTypes.display" class="d-flex flex-row">
+                            <div class="label-text-mid">Client</div>
+                            <div class="form-group mb-0  pmw-125 w-100 mr-1">
+                                <input type="text" class="form-control" (contextmenu)="$event.stopPropagation();"
+                                    formControlName="client" placeholder="Enter" [readOnly]="isReadOnly && captureData.tabType !== tabType.outputControl">
+                            </div>
+                        </div>
+                    </div>
+                    <div [hidden]="pageTypeName === pageTypes.display" class=" tab-width form-group flex-fill">
+                        <div class="text-area">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

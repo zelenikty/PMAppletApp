@@ -1,0 +1,77 @@
+<section>
+  <div class="technical-infos-block">
+
+    <div class="row">
+<!-- Left Side of the Block -->
+      <div class="col col-5">
+
+        <!-- Deal Activities Card -->
+        <div class="row mb-2">
+            <div class="col pr-0">
+                <app-pm-card [title]="'Deal Activities'">
+                  <div class="d-flex">
+                    <div class="label-text pmw-100 ">Entered</div>
+                    <div class="">
+                      <span class="pr-2">:</span>
+                      <span class="pr-2">17:23:2018</span>
+                      <span class="pr-2 mr-4">12:14 PM</span>
+                    </div>
+                    <div class="pmw-100">AD17231983</div>
+                  </div>
+
+                  <div class="d-flex">
+                      <div class="label-text pmw-100 ">Last Change</div>
+                      <div class="">
+                          <span class="pr-2">:</span>
+                          <span class="pr-2">17:23:2018</span>
+                          <span class="pr-2 mr-4">12:14 PM</span>
+                      </div>
+                      <div class="pmw-100">AD17231983</div>
+                  </div>
+                </app-pm-card>
+            </div>  
+        </div>
+
+        <!-- Open Issues Card -->
+        <div class="row mb-2">
+            <div class="col pr-0">
+                <app-pm-card [title]="'Open Issues'">
+                    <div class="d-flex bottom-border py-1">
+                        <div class="">
+                          <span class="pmw-125 pr-2">23:09:2018</span>
+                          <span class="pr-2">6:21 AM</span>
+                        </div>
+                        <div class="">: Check Required</div>
+                    </div>
+
+                    <div class="d-flex bottom-border">
+                        <div class="py-1">
+                            <span class="pmw-125 pr-2">23:09:2018</span>
+                            <span class="pr-2">6:21 AM</span>
+                        </div>
+                        <div class="">: Check Required</div>
+                    </div>
+                </app-pm-card>
+            </div>
+          </div>
+
+      </div>
+
+      <!-- Right Side of the Block -->
+      <div class="col col-7 mb-2 pl-2">
+        
+        <!-- Output Requirements/ Interface Delivery Card -->
+        <div class="">
+            <app-pm-card [title]="'Output Requirements/Interface Delivery'">
+              <div class="form-group"  (contextmenu)="$event.stopPropagation();">
+                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Contract details should be here" disabled></textarea>
+                </div>
+            </app-pm-card>
+          </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

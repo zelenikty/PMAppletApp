@@ -1,0 +1,34 @@
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url($fontpath + 'HelveticaNeueLTPro-Lt.eot');
+    src: url($fontpath + 'HelveticaNeueLTPro-Lt.eot?#iefix') format('embedded-opentype'),
+        url($fontpath + 'HelveticaNeueLTPro-Lt.woff2') format('woff2'),
+        url($fontpath + 'HelveticaNeueLTPro-Lt.woff') format('woff'),
+        url($fontpath + 'HelveticaNeueLTPro-Lt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url($fontpath + 'HelveticaNeueLTPro-Md.eot');
+    src: url($fontpath + 'HelveticaNeueLTPro-Md.eot?#iefix') format('embedded-opentype'),
+        url($fontpath + 'HelveticaNeueLTPro-Md.woff2') format('woff2'),
+        url($fontpath + 'HelveticaNeueLTPro-Md.woff') format('woff'),
+        url($fontpath + 'HelveticaNeueLTPro-Md.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url($fontpath + 'HelveticaNeueLTPro-Bd.eot');
+    src: url($fontpath + 'HelveticaNeueLTPro-Bd.eot?#iefix') format('embedded-opentype'),
+        url($fontpath + 'HelveticaNeueLTPro-Bd.woff2') format('woff2'),
+        url($fontpath + 'HelveticaNeueLTPro-Bd.woff') format('woff'),
+        url($fontpath + 'HelveticaNeueLTPro-Bd.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+

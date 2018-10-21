@@ -1,0 +1,63 @@
+@import "../../../assets/scss/variables";
+.nav-tabs {
+    font-size: $regular-font-size;
+    border-bottom: 0;
+    padding: 0px 20px;
+    background-color: #F1F1F1;
+    .nav-item {
+        .nav-link {
+            margin: 0 3px;
+            padding: 0;
+            height: 50px;
+            min-width: 60px; // Active tab style
+            &.active {
+                background-color: $body_bg;
+                color: $content-text-black;
+                border: none;
+                .nav-btn {
+                    height: 40px;
+                    background-color: $body_bg;
+                    font-weight: 600;
+                    color: $content-text-black;
+                    border-radius: 4px;
+                    padding: 10px 20px;
+                    text-align: center;
+                }
+                &.disable {
+                    background-color: #F1F1F1;
+                }
+            } // Disable tab style
+            &.disable {
+                color: $content-text-black;
+                border: none;
+                .nav-btn {
+                    height: 40px;
+                    background-color: #E5E5E5;
+                    font-weight: 300;
+                    color: #999999;
+                    border-radius: 4px;
+                    padding: 10px 20px;
+                    text-align: center;
+                    cursor: not-allowed;
+                }
+                &.active {
+                    background-color: #F1F1F1;
+                }
+            }
+            .nav-btn {
+                background-color: #255B89;
+                color: $content-text-white;
+                border-radius: 4px;
+                height: 40px;
+                padding: 10px;
+                font-weight: 300;
+                text-align: center;
+            }
+        }
+    }
+}
+
+ul {
+    margin-left: 30px;
+    margin-top: 15px;
+}

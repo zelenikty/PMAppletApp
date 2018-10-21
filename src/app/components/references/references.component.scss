@@ -1,0 +1,39 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+// References Tab Styles
+section {
+    padding-top: 0;
+    .references-block {
+        background-color: $block-color;
+        padding: 15px 20px;
+        border-radius: 5px;
+        .row {
+            .col-10 {
+                .row {
+                    .col {
+                        // Equal Size Flex Box Styles
+                        .flex-box {
+                            padding: 15px 20px;
+                            height: 100px;
+                            width: 100%;
+                            border: 1px solid $border-color;
+                            border-radius: 3px;
+                            background-color: $body-color;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+    // Label Styles
+    .label-text {
+        width: 200px;
+    }
+    .tiny-text {
+        font-size: $tiny-text;
+    }
+}

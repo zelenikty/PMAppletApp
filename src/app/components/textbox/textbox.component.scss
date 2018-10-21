@@ -1,0 +1,88 @@
+@import "../../../assets/scss/_variables";
+
+// TEXTBOX STYLES
+.textbox-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #a2a2a2;
+  border-radius: 3px;
+  padding: 0 10px;
+  // INPUT BOX
+  .text-input-box {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    font-size: 13px;
+    color: $content-text-black;
+    font-weight: 300;
+    margin-top: -2px;
+  }
+  .search-icon {
+    display: none;
+  }
+  .date-icon {
+    display: none;
+  }
+  .time-icon {
+    display: none;
+  }
+
+  // BLACK SEARCH INPUT
+  &.black-search-input {
+    .search-icon {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 14px;
+      height: 14px;
+      background: url('/assets/i/search-grey.svg');
+      background-size: 14px 14px;
+      margin-right: 8px;
+    }
+  }
+
+  // BLUE SEARCH INPUT
+  &.blue-search-input {
+    .search-icon {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 14px;
+      height: 14px;
+      background: url('/assets/i/search-blue.svg');
+      background-size: 14px 14px;
+      margin-right: 8px;
+    }
+  }
+
+  // DATA-INPUT-FIELDS
+  &.data-input-fields {
+    height: 33px;
+  }
+
+  // LOGIN-TXT
+  &.login-txt {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    border-color: #eeeeee;
+    padding: 0 5px;
+    &.has-error {
+      border-color: #f20f0f;
+    }
+    .text-input-box {
+      font-size: 14px;
+    }
+  }
+
+}

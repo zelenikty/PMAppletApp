@@ -1,0 +1,60 @@
+[
+    {
+        "request": {
+            "desksTypes": [
+                {
+                    "id": "1",
+                    "value": "Option 1"
+                },
+                {
+                    "id": "2",
+                    "value": "Option 2"
+                },
+                {
+                    "id": "3",
+                    "value": "Option 3"
+                },
+                {
+                    "id": "4",
+                    "value": "Option 4"
+                },
+                {
+                    "id": "5",
+                    "value": "Unallocated"
+                },
+                {
+                    "id": "6",
+                    "value": "Allocated"
+                }
+            ],
+            "deliveryInfoTypes1": [
+                {
+                    "id": "1",
+                    "value": "abroad"
+                },
+                {
+                    "id": "2",
+                    "value": "Info 1"
+                },
+                {
+                    "id": "3",
+                    "value": "Info 2"
+                }
+            ],
+            "deliveryInfoTyeps2": [
+                {
+                    "id": "1",
+                    "value": "del2 abroad"
+                },
+                {
+                    "id": "2",
+                    "value": "del2 Info 1"
+                },
+                {
+                    "id": "3",
+                    "value": "del2 Info 2"
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,26 @@
+@import "../../../assets/scss/variables";
+
+// Card Component Styles
+.card {
+    
+    height: 100%;
+    .card-header {
+        color: white;
+        background-color: #7898B3;
+        padding: 5px 20px;
+        font-weight: bold;
+        height: 30px;
+        font-size: $regular-font-size;
+    }
+    // Color changes based on the State
+    .buy-background {
+        background-color: #79A165;
+    }
+    .sell-background {
+        background-color: #BE5061;
+    }
+    // Card Body
+    .card-body {
+        background-color: #F7F7F7;
+    }
+}

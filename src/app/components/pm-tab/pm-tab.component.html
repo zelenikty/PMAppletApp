@@ -1,0 +1,9 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item" *ngFor="let tab of tabs; let i = index" [attr.disabled]="tab.disable ? true : null" [attr.data-index]="i" (click)="selectTab(tab,i)">
+    <a [class.active]="tab.active && !tab.disable" [class.disable]="tab.disable" class="nav-link " data-toggle="tab" href="#" role="tab">
+      <div class="nav-btn">{{tab.title}}</div>
+    </a>
+  </li>
+</ul>
+<div>
+<ng-content></ng-content>

@@ -1,0 +1,170 @@
+@import "../../../assets/scss/variables";
+
+// Pop Up Menu Styles
+.menu-dropdown {
+    position: fixed;
+    z-index: 10;
+    display: none;
+    padding: 0;
+    margin: 0;
+    width: 170px;
+    -webkit-box-shadow: 0px 3px 11px 0 rgba(1, 2, 2, 0.14);
+            box-shadow: 0px 3px 11px 0 rgba(1, 2, 2, 0.14);
+    &.open {
+        display: inline;
+    } // First level menu
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        background: $body_bg;
+        width: 170px;
+        li {
+            position: relative;
+            padding: 0 10px;
+            height: 35px;
+            background: $body_bg;
+            &.divider {
+                height: 1px;
+                padding: 10px;
+                div {
+                    border-bottom: 1px solid $border-color;
+                    margin-left: 10px;
+                    width: 130px;
+                }
+            }
+            &:last-child {
+                padding-bottom: 50px;
+            }
+            &:hover {
+                a/* Apply to all links inside the multi-level menu */
+                    {
+                    cursor: pointer;
+                    color: #245A88;
+                    text-decoration: none;
+                    padding: 10px;
+                    /* Make the link cover the entire list item-container */
+                    display: block;
+                    &.active {
+                        color: $content-text-black;
+                        font-weight: 700;
+                        &:hover {
+                            color: $content-text-black;
+                            background: $body_bg;
+                        }
+                        &.expander {
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                top: 50%;
+                                right: 15px;
+                                -webkit-transform: translateY(-50%);
+                                        transform: translateY(-50%);
+                                width: 10px;
+                                height: 10px;
+                                background: url('/assets/i/sort_down-black.svg');
+                                background-size: 10px 10px;
+                            }
+                        }
+                    }
+                    &:hover {
+                        background: #0099CC;
+                        color: $content-text-white;
+                    }
+                }
+                ul {
+                    /* On hover, display the next level's menu */
+                    display: inline;
+                }
+            }
+        }
+    }
+    /* Menu Link Styles */
+    a/* Apply to all links inside the multi-level menu */
+        {
+        cursor: pointer;
+        color: #245A88;
+        text-decoration: none;
+        padding: 10px;
+        /* Make the link cover the entire list item-container */
+        display: block;
+        &.expander {
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                -webkit-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                width: 10px;
+                height: 10px;
+                background: url('/assets/i/sort_down-blue.svg');
+                background-size: 10px 10px;
+            }
+        }
+        &:hover {
+            color: $content-text-white;
+            &.expander {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 15px;
+                    -webkit-transform: translateY(-50%);
+                            transform: translateY(-50%);
+                    width: 10px;
+                    height: 10px;
+                    background: url('/assets/i/sort_down-white.svg');
+                    background-size: 10px 10px;
+                }
+            }
+        }
+        &.active {
+            color: $content-text-black;
+            font-weight: 700;
+            &:hover {
+                color: $content-text-black;
+            }
+        }
+    } // Second level menu style
+    .second-level-menu {
+        position: absolute;
+        top: -36px;
+        right: -170px;
+        width: 170px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        border: 1px solid $border-color;
+        -webkit-box-shadow: 3px 1px 11px 0 rgba(1, 2, 2, 0.14);
+                box-shadow: 3px 1px 11px 0 rgba(1, 2, 2, 0.14);
+        li {
+            color: #245A88;
+            position: relative;
+            height: 35px;
+            &:first-child {
+                padding-top: 10px;
+                height: 45px;
+            }
+            &:last-child {
+                padding-bottom: 50px;
+            }
+            &:hover {
+                a/* Apply to all links inside the multi-level menu */
+                    {
+                    cursor: pointer;
+                    color: #245A88;
+                    text-decoration: none;
+                    padding: 10px;
+                    /* Make the link cover the entire list item-container */
+                    display: block;
+                    &:hover {
+                        background: #0099CC;
+                        color: $content-text-white;
+                    }
+                }
+            }
+        }
+    }
+}

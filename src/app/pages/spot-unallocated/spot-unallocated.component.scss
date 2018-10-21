@@ -1,0 +1,35 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+// Bottom line of the page
+.bottom-content {
+    background-color: $body-color;
+    border-top: 1px solid $border-color;
+    .d-flex {
+        background-color: $action-bar-color;
+        margin: 0 29px;
+    }
+}
+
+.action-panel {
+    // PDF icon
+    .pdf-doc {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        min-width: 25px;
+        min-height: 25px;
+        background: url('../../../assets/i/pdf-file-format.svg') no-repeat;
+        background-size: 25px 25px;
+    }
+    // Edit Doc icon
+    .edit-doc {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        min-width: 25px;
+        min-height: 25px;
+        background: url('../../../assets/i/edit-file.svg') no-repeat;
+        background-size: 25px 25px;
+    }
+}

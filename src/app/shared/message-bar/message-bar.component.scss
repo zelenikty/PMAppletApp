@@ -1,0 +1,8 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+.message-bar{
+    background-color: #F5F5F5;
+    padding: 10px 50px;
+    font-size: $regular-font-size;
+}

@@ -1,0 +1,10 @@
+<!-- Custom Check box -->
+<label class="lbl {{className}}  {{isFocused ? 'focus':''}}">
+  
+  <input #inputEl type="checkbox" [name]="label" [(ngModel)]="isChecked" (change)="onChange(inputEl.checked)"
+   *ngIf="isChecked" checked>
+  <input #inputEl type="checkbox" [name]="label" [(ngModel)]="isChecked" (change)="onChange(inputEl.checked)"
+   *ngIf="!isChecked" >
+  <span class="chk-box {{isChecked ? 'chk':''}}"></span>
+  <span class="lbl-txt" *ngIf="label" >{{label}}</span>
+</label>

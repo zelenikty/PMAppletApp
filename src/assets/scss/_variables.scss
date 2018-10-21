@@ -1,0 +1,46 @@
+
+// THEME
+$body_bg: #ffffff;
+
+//BUTTONS
+$border-btn: #268dc8;
+$blue-btn: #268dc8;
+$blue-lt-btn: #00a8ff;
+
+// TEXT-COLORS
+$content-text-black: #333333;
+$content-text-white: #ffffff;
+$link-text-blue: #268dc8;
+$gray-text: rgb(161, 143, 143);
+
+
+
+// THEME COLORS
+$header-color: #245A88;
+$body-color: #F1F1F1;
+$modal-color: #F8F8FF;
+$border-color: #DDDDDD;
+$block-color: #fff;
+$label-dark-blue: rgb(39, 9, 107);
+$action-bar-color: rgba(227, 227, 236, 0.747);
+$modal-border-color:#7898B3;
+
+// FONT SIZES
+$header-font-size: 13px;
+$h1-font-size: 24px;
+$h2-font-size: 18px;
+$h4-font-size: 16px;
+$h5-font-size: 14px;
+$regular-font-size: 12px;
+$tiny-text: 10px;
+
+// Fonts
+
+//refer the font file name and font scss
+$fontpath: 'assets/fonts/' !default;
+$fontname: 'Helvetica' !default;
+
+$font-type-normal:  'HelveticaNeueLTPro-Lt' !default;
+$font-type-bold:  'HelveticaNeueLTPro-Bd' !default;
+
+$font-family: "Helvetica" , sans-serif;

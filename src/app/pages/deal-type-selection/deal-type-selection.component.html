@@ -1,0 +1,126 @@
+<app-layout [isDisplayFooter]="false">
+
+  <section class="section-deal-type">
+
+    <h1>Collateral Management</h1>
+    <h5 class="mt-0 gray-text"><a [routerLink]="['/']">Main Menu </a>
+      <div class="arrow"></div> <span class="sub-section text-capitalize font-weight-normal">Deal type
+        selection</span>
+    </h5>
+
+
+    <div class="d-flex deal-type-names ">
+      <div class="d-flex flex-column flex-wrap unallocated-types">
+        <div class="">
+          <h4 class="">Unallocated</h4>
+        </div>
+
+      </div>
+      <div class="d-flex flex-wrap allocated-types">
+        <div class="">
+          <h4 class="mb-4">Allocated</h4>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="d-flex deal-types justify-content-center">
+
+      <div class="d-flex flex-column flex-wrap unallocated-types mr-5">
+
+        <div class="text-center">
+          <a [routerLink]="['/deal-type-selection/spot-unallocated']" class="deal-type-link">
+            <div class="deal-box">
+              <span class="deal-number">1</span>
+              <span class="deal-name">Spot</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center">
+          <a [routerLink]="['/deal-type-selection/forward']" class="deal-type-link">
+            <div class="deal-box">
+              <span class="deal-number">2</span>
+              <span class="deal-name">Forward</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center">
+          <a [routerLink]="['/deal-type-selection/transfer']" class="deal-type-link">
+            <div class="deal-box">
+              <span class="deal-number">3</span>
+              <span class="deal-name">Transfer</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="d-flex flex-wrap allocated-types ">
+
+        <div class="text-center ">
+          <a [routerLink]="['/deal-type-selection/spot-delivery']" class="deal-type-link">
+            <div class="deal-box allocated-box">
+              <span class="deal-number">5</span>
+              <span class="deal-name">Spot Delivery</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center ">
+          <a [routerLink]="['/deal-type-selection/in-out-delivery']" class="deal-type-link">
+            <div class="deal-box allocated-box">
+              <span class="deal-number">8</span>
+              <span class="deal-name">In/Out Delivery</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center ">
+          <a [routerLink]="['/deal-type-selection/spot-deposit']" class="deal-type-link">
+            <div class="deal-box allocated-box">
+              <span class="deal-number">6</span>
+              <span class="deal-name">Spot Deposit</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center ">
+          <a [routerLink]="['/deal-type-selection/vault-transfer']" class="deal-type-link">
+            <div class="deal-box allocated-box">
+              <span class="deal-number">9</span>
+              <span class="deal-name">Vault Transfer</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center ">
+          <a [routerLink]="['/deal-type-selection/spot-consignment']" class="deal-type-link">
+            <div class="deal-box allocated-box">
+              <span class="deal-number">7</span>
+              <span class="deal-name">Spot Consignment</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Action bar started -->
+  <div class="d-flex justify-content-between action-panel">
+    <div class="p-2 d-flex flex-row">
+    </div>
+    <div class="p-2">
+    </div>
+    <div class="p-2">
+      <a class="btn btn-action" (click)="goBack()"><strong>F12</strong>&nbsp;=&nbsp;Back</a>
+    </div>
+  </div>
+  <!-- Action bar end -->
+
+</app-layout>

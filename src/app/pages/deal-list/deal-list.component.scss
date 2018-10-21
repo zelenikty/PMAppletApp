@@ -1,0 +1,134 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+// List Table Styles
+.search-deals {
+    width: 100%;
+    height: 100%;
+    padding: 13px 50px;
+    .deal-content {
+        border-radius: 5px;
+        background-color: $body_bg;
+        padding: 0 25px; 
+        
+        // Table related css start
+        .deallist-tbl {
+            width: 100%;
+            .table-striped>tbody>tr:nth-child(odd)>td {
+                background-color: #F9F9F9;
+            }
+            .table-hover tbody tr:hover td {
+                background-color: #0099CC;
+                color: $content-text-white;
+            }
+            .table-hover tbody tr.active td {
+                background-color: #0099CC;
+                color: $content-text-white;
+            }
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                overflow-x: scroll;
+                display: block;
+            }
+            thead {
+                background-color: #F5F1EF;
+            }
+            thead,
+            tbody {
+                display: block;
+            }
+            tbody {
+                overflow-y: scroll;
+                overflow-x: hidden;
+                height: 650px;
+            }
+            td {
+                min-width: 100px;
+                height: 30px;
+                border: solid 1px $border-color;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100px;
+                padding: 5px 5px 5px 10px;
+                &.index-clm {
+                    width: 35px;
+                    min-width: 35px;
+                    padding: 5px;
+                }
+                div {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+            th {
+                position: relative;
+                font-size: 10px;
+                font-weight: bold;
+                min-width: 100px;
+                height: 30px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-transform: uppercase;
+                max-width: 100px;
+                padding: 5px 5px 6px 10px;
+                border-left: solid 1px $content-text-black;
+                border-top: solid 1px $border-color;
+                border-bottom: solid 1px $border-color;
+                &:last-child {
+                    border-right: solid 1px $content-text-black;
+                }
+                &.index-clm {
+                    width: 35px;
+                    min-width: 35px;
+                    padding: 5px;
+                }
+                span.ui-column-resizer {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    margin: 0;
+                    width: 8px;
+                    height: 100%;
+                    padding: 0;
+                    cursor: col-resize;
+                    border: 1px solid transparent;
+                  }
+                
+            }
+        } // Table related css end
+    }
+
+    // Customized Action Panel Styles
+    .action-panel {
+        .pdf-doc {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            min-width: 25px;
+            min-height: 25px;
+            background: url('../../../assets/i/pdf-file-format.svg') no-repeat;
+            background-size: 25px 25px;
+        }
+        .xlsx-doc {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            min-width: 25px;
+            min-height: 25px;
+            background: url('../../../assets/i/xlsx-file-format.svg') no-repeat;
+            background-size: 25px 25px;
+        }
+        .edit-doc {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            min-width: 25px;
+            min-height: 25px;
+            background: url('../../../assets/i/edit-file.svg') no-repeat;
+            background-size: 25px 25px;
+        }
+    }
+}

@@ -1,0 +1,166 @@
+<section>
+  <div class="payment-delivery-block">
+    <form (ngSubmit)="onSubmit()" [formGroup]="paymentDeliveryFrom">
+      <div class="row">
+
+        <div class="col col-9">
+
+          <div class="row">
+            <div class="col pr-0">
+
+              <app-pm-card [title]="'Debit/ IN'">
+
+                <div class="d-flex justify-content-start align-content-end">
+                  <div class="label-text pr-2">Metal</div>
+                  <div class="form-group mini-legnth-input">
+                    <input class="form-control" (contextmenu)="$event.stopPropagation();" formControlName="payDebitMetal" type="text" mask="0000" [appPadNumber]="4"
+                      name="payDebitMetal" id="#payDebitMetal" placeholder="Enter" readonly>
+                  </div>
+                  <div class="form-group flex-fill">
+                    <input type="text" class="form-control" disabled>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-start">
+                  <div class="label-text mr-3 pr-3">Account</div>
+                  <div class="form-group mr-1 large-legnth-input mb-0">
+                    <input class="form-control error-focus" (contextmenu)="$event.stopPropagation();" formControlName="payDebitAccount" type="text" maxlength="19"
+                      mask="AAAA-AAAAAAA-AA-AAA" required name="payDebitAccount" (blur)="onBlurInput()" id="#payDebitAccount"
+                      placeholder="Enter" [readOnly]="isReadOnly" [ngClass]="{'error': formControls.payDebitAccount.touched && formControls.payDebitAccount.invalid || formControls.payDebitAccount.invalid && isSubmitted}">
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-end mt-2">
+                  <div class="label-text pr-4"></div>
+                  <div class="form-group flex-fill ml-3 mb-0">
+                    <input type="text" maxlength="500" class="form-control input-disable-large" disabled>
+                  </div>
+                </div>
+
+              </app-pm-card>
+
+            </div>
+            <div class="col">
+              <app-pm-card [title]="'Credit/ OUT'">
+
+                <div class="d-flex justify-content-start align-content-end">
+                  <div class="label-text pr-1">Currency</div>
+                  <div class="form-group mini-legnth-input">
+                    <input class="form-control" (contextmenu)="$event.stopPropagation();" formControlName="payCreditCurrency" type="text" maxlength="4" mask="AAAA"
+                      name="payCreditCurrency" id="#payCreditCurrency" placeholder="Enter" disabled>
+                  </div>
+                  <div class="form-group flex-fill">
+                    <input type="text" class="form-control" disabled>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-start">
+                  <div class="label-text pr-2">Account</div>
+                  <div class="form-group mr-1 large-legnth-input mb-0">
+                    <input class="form-control error-focus" (contextmenu)="$event.stopPropagation();" formControlName="payCreditAccount" type="text" maxlength="19"
+                      mask="AAAA-AAAAAAA-AA-AAA" required name="quantity" id="#quantity" placeholder="Enter" (blur)="onBlurInput()"
+                      [readOnly]="isReadOnly" [ngClass]="{'error': formControls.payCreditAccount.touched && formControls.payCreditAccount.invalid || formControls.payCreditAccount.invalid && isSubmitted}">
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-end mt-2">
+                  <div class="label-text mr-5 pr-4"></div>
+                  <div class="form-group flex-fill ml-4 mb-0">
+                    <input type="text" maxlength="500" class="form-control input-disable-large" disabled>
+                  </div>
+                </div>
+
+              </app-pm-card>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <app-pm-card [title]="'Settlement/ Instruction'">
+
+                <div class="row">
+                  <div class="col">
+                    <div class="d-flex justify-content-start">
+                      <div class="label-text pr-4 mr-4">Via Bank</div>
+                      <div class="form-group long-legnth-input ml-3 mb-0">
+                        <input class="form-control" (contextmenu)="$event.stopPropagation();" formControlName="paySettleViaBank" type="text" maxlength="19" mask="AAAA-AAAAAAA-AA-AAA"
+                          name="paySettleViaBank" id="#paySettleViaBank" placeholder="Enter" [readOnly]="isReadOnly">
+                      </div>
+                    </div>
+
+                    <div class="d-flex justify-content-start mt-2">
+                      <div class="label-text mr-5 pr-5"></div>
+                      <div class="form-group ml-3 mb-0 flex-fill">
+                        <textarea rows="4" (contextmenu)="$event.stopPropagation();" formControlName="viaBankDescript" type="text" class="form-control input-disable-mini  fixed-legnth-disable">
+
+
+
+                          </textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <div class="d-flex justify-content-start">
+                      <div class="label-text mr-3 pr-2">ACC with Bank</div>
+                      <div class="form-group ml-1 mr-1 mb-0 long-legnth-input">
+                        <input class="form-control" (contextmenu)="$event.stopPropagation();" formControlName="paySettleAccount" type="text" maxlength="19" mask="AAAA-AAAAAAA-AA-AAA"
+                          name="paySettleAccount" id="#paySettleAccount" placeholder="Enter" [readOnly]="isReadOnly">
+                      </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-2">
+                      <div class="label-text mr-5 pr-5"></div>
+                      <div class="form-group flex-fill ml-3 mb-0">
+                        <textarea rows="4" (contextmenu)="$event.stopPropagation();" formControlName="accBankDescript" type="text" maxlength="500" class="form-control input-disable-mini">
+
+
+
+
+
+
+
+                          </textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col pl-5 ml-1">
+                    <div class="d-flex justify-content-start">
+                      <div class="label-text pr-2">Beneficiary</div>
+                      <div class="form-group mr-1 mb-0 large-legnth-input">
+                        <input class="form-control" (contextmenu)="$event.stopPropagation();" formControlName="paySettleBenificiary" type="text" maxlength="19"
+                          mask="AAAA-AAAAAAA-AA-AAA" name="paySettleBenificiary" id="#paySettleBenificiary" placeholder="Enter"
+                          [readOnly]="isReadOnly">
+                      </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-2">
+                      <div class="label-text mr-5 pr-5"></div>
+                      <div class="form-group flex-fill ml-3 mb-0">
+                        <textarea rows="4" (contextmenu)="$event.stopPropagation();" formControlName="benificiaryDescript" type="text" class="form-control input-disable-mini">
+
+
+
+                          </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </app-pm-card>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col col-3">
+
+        </div>
+
+      </div>
+    </form>
+  </div>
+</section>

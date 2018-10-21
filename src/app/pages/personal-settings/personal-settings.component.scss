@@ -1,0 +1,39 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+// Personal Settings styles
+.personal-settings {
+    width: 100%;
+    height: calc(100vh - 64px);
+    padding: 13px 50px;
+
+    // Desk Settings and Other Settings Content Styles
+    .settings-content {
+        border-radius: 5px;
+        background-color: $body_bg;
+        padding: 0 20px;
+        height: calc(100vh - 168px);
+        
+        .right-title{
+            font-size: $regular-font-size;
+        }
+
+        .card-content-title{
+            font-size: $regular-font-size;
+            font-weight: bold;
+        }
+
+        .other-settings{
+            .label{
+                width: 220px;
+            }
+            .form-group{
+                width: 80px;
+            }
+        }
+
+        
+    }
+
+    
+}

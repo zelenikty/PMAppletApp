@@ -1,0 +1,29 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+// Java Console Styles
+.java-console{
+    width: 100%;
+    height: calc( 100vh - 65px);     
+}
+.modal-body {
+    background-color: $modal-color;
+}
+
+// Log Styles
+.log-list {
+    height: 400px;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    p {
+        margin-bottom: 0;
+    }
+}
+.modal-footer {
+    padding: 10px;
+    border-top: 2px solid $modal-border-color;
+}
+
+    
+

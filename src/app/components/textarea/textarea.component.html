@@ -1,0 +1,11 @@
+<!-- TEXTBOX -->
+<div class="textarea-wrapper {{className}}">
+  <textarea (contextmenu)="$event.stopPropagation();"
+    [name]="name"
+    class="textarea"
+    [placeholder]="'Write text here...'"
+    (keyup)="onKey($event)"
+    [(ngModel)]="value"
+  ></textarea>
+</div>
+<!-- TEXTBOX END -->

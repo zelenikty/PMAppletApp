@@ -1,0 +1,33 @@
+<div class="menu-dropdown {{isOpen? 'open' : ''}}">
+  <ul class="">
+    <li>
+      <a routerLink="/main-menu" routerLinkActive="active">Main Menu</a>
+    </li>
+    <li>
+      <a routerLink="/deal-type-selection" routerLinkActive="active" class="expander">Deal Capture</a>
+      <!-- Second level menu start -->
+      <ul class="second-level-menu">
+        <li><a routerLink="/deal-type-selection/spot-unallocated" routerLinkActive="active">Spot</a></li>
+        <li><a routerLink="/deal-type-selection/spot-unallocated" routerLinkActive="active">Forward</a></li>
+        <li>
+          <a routerLink="/deal-type-selection/spot-unallocated" routerLinkActive="active">Transfer</a>
+        </li>
+        <li class="divider ">
+          <div></div>
+        </li>
+
+        <li><a routerLink="/deal-type-selection/spot-unallocated" routerLinkActive="active">Spot Delivery</a></li>
+        <li><a routerLink="/deal-type-selection/spot-unallocated" routerLinkActive="active">Spot Deposit</a></li>
+        <li><a routerLink="/deal-type-selection/spot-unallocated" routerLinkActive="active">Spot Consignment</a></li>
+        <li><a routerLink="/deal-type-selection/spot-unallocated" routerLinkActive="active">In/Out Delivery</a></li>
+        <li><a routerLink="/deal-type-selection/spot-unallocated" routerLinkActive="active">Vault Transfer</a></li>
+      </ul>
+    </li>
+    <li><a routerLink="/search-deals" routerLinkActive="active" class="expander">Search</a></li>
+    <li><a routerLink="/single-search" routerLinkActive="active" class="expander">Single Search</a></li>
+    <li class="divider ">
+      <div></div>
+    </li>
+    <li><a routerLink="/personal-settings" routerLinkActive="active">Settings</a></li>
+  </ul>
+</div>

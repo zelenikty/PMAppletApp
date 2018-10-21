@@ -1,0 +1,72 @@
+<app-layout id="spot-unallocated">
+  <!-- Header panel -->
+  <app-capture-panel [isReadOnly]="isReadOnly" [buyOrSellType]="buyOrSellType" [lookupData]="lookupData" [pageTypeName]="pageTypeName"
+    [validationErrors]="validationErrors" [validationWarnings]="validationWarnings" [enteredResult]="enteredResult"
+    [activeTab]="activeTabId" (capturePanelFormSubmit)="onCapturePanelFormSubmit($event)" [serverError]="serverError"></app-capture-panel>
+
+  <!-- Tab panel -->
+  <div class="bottom-content">
+    <app-pm-tab (tabSelection)="onTabSelect($event)">
+      <app-pm-tab-content [title]="'Contact Data'" [id]="1">
+        <app-contract-data [isReadOnly]="isReadOnly" [lookupData]="lookupData" [buyOrSellType]="buyOrSellType"
+          [activeTab]="activeTabId" (buyOrSell)="onBuyOrSell($event)" (contractTabFormSubmit)="onContractTabFormSubmit($event)"></app-contract-data>
+      </app-pm-tab-content>
+      <app-pm-tab-content *ngIf="pageTypeName === pageTypes.display" [title]="'Add Items'" [id]="11" [disable]="true">
+
+      </app-pm-tab-content>
+      <app-pm-tab-content [title]="'Payment Delivery'" [id]="2">
+        <app-payment-delivery [isReadOnly]="isReadOnly" [activeTab]="activeTabId" (paymentDeliveryFormSubmit)="onPaymentDeliveryFormSubmit($event)"></app-payment-delivery>
+      </app-pm-tab-content>
+      <app-pm-tab-content [title]="'Text'" [id]="3">
+        <app-text></app-text>
+      </app-pm-tab-content>
+      <app-pm-tab-content [title]="'Output Control'" [id]="4">
+        <app-output-control [isReadOnly]="isReadOnly" [lookupData]="lookupData" [outputControlData]="outputControlData"></app-output-control>
+      </app-pm-tab-content>
+      <app-pm-tab-content [title]="'Tax'" [id]="5" [disable]="pageTypeName === pageTypes.display">
+        <app-tax></app-tax>
+      </app-pm-tab-content>
+      <app-pm-tab-content [title]="'References'" [id]="6" [disable]="pageTypeName === pageTypes.display">
+        <app-references></app-references>
+      </app-pm-tab-content>
+      <app-pm-tab-content [title]="'Notes'" [id]="7">
+        <app-notes></app-notes>
+      </app-pm-tab-content>
+      <app-pm-tab-content [title]="'Technical Infos'" [id]="8" [disable]="pageTypeName === pageTypes.display">
+        <app-technical-infos></app-technical-infos>
+      </app-pm-tab-content>
+      <app-pm-tab-content [title]="'Repetition'" [id]="9" [disable]="pageTypeName === pageTypes.display">
+        <app-repetition [lookupData]="lookupData" [isReadOnly]="isReadOnly"></app-repetition>
+      </app-pm-tab-content>
+      <app-pm-tab-content [title]="'Prevention'" [id]="10" [disable]="pageTypeName === pageTypes.display">
+        <app-prevention></app-prevention>
+      </app-pm-tab-content>
+    </app-pm-tab>
+
+    <div class="m-0">
+      <!-- Action bar started -->
+      <div class="d-flex justify-content-between action-panel">
+        <div class="py-2 d-flex">
+          <div class="pdf-doc mr-3" (click)="printPfd()"></div>
+          <div class="edit-doc"></div>
+        </div>
+        <div class="p-2">
+          <a class="btn btn-action mr-1 f2-btn" *ngIf="pageTypeName !== pageTypes.display" (click)="onCheck()"><span
+              class="font-weight-bold">F2</span>&nbsp;=&nbsp;Check</a>
+          <a class="btn btn-action mr-1 f3-btn" *ngIf="pageTypeName !== pageTypes.display" (click)="onSave()"><span
+              class="font-weight-bold">F3</span>&nbsp;=&nbsp;Save</a>
+          <a class="btn btn-action ml-1 f5-btn" *ngIf="pageTypeName !== pageTypes.display" (click)="onReset()"><span
+              class="font-weight-bold">F5</span>&nbsp;=&nbsp;Reset</a>
+
+        </div>
+        <div class="p-2 mr-2">
+          <a class="btn btn-action f12-btn" (click)="onBack()"><span class="font-weight-bold">F12</span>&nbsp;=&nbsp;Back</a>
+        </div>
+      </div>
+    </div>
+    <!-- Action bar end -->
+  </div>
+
+
+
+</app-layout>

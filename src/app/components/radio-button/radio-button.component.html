@@ -1,0 +1,8 @@
+<label class="lbl {{className}}">
+    <input #inputEl type="radio" [name]="groupName" [value]="value" (change)="change(inputEl.checked)"
+     *ngIf="isChecked" checked>
+    <input #inputEl type="radio" [name]="groupName" [value]="value" (change)="change(inputEl.checked)"
+     *ngIf="!isChecked" >
+    <span class="chk-box"></span>
+    <span class="lbl-txt" *ngIf="label" >{{label}}</span>
+  </label>

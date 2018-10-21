@@ -1,0 +1,19 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+section {
+    padding-top: 0;
+    .output-control-block {
+        background-color: $block-color;
+        padding: 15px 20px;
+        min-height: 400px;
+        border-radius: 5px;
+    }
+    .form-control-div{
+        word-wrap: break-word;
+        width: 100%;
+        padding: 10px;
+        color: #666666;
+    }
+   
+}

@@ -1,0 +1,32 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+section {
+    padding-top: 0;  
+}
+
+.notes-block {
+    background-color: $block-color;
+    padding: 15px 20px 80px 20px;
+    border-radius: 5px;
+    .d-flex {
+        
+        //  Z letter Panel Styles
+        .z-board {
+            color: $content-text-black;
+            min-height: 217px;
+            height: 100%;
+            width: 33px;
+            padding: 5px;
+            border: 1px solid $border-color;
+            border-right: none;
+            border-radius: 3px;
+        }
+
+        // Customized Text Area Styles
+        .textarea {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}

@@ -1,0 +1,89 @@
+<app-layout>
+
+  <section class="personal-settings">
+    <h2 class="page-title mb-3">
+      Personal Settings
+    </h2>
+    <form [formGroup]="settingsForm">
+
+      <div class="settings-content">
+        <!-- Header started -->
+        <div class="d-flex py-3 px-0 align-items-center">
+          <h4 class="body-title">Settings</h4>
+          <div class="ml-auto d-flex align-items-center">
+            <div class="right-title mr-2">No of Row Displayed</div>
+            <app-dropdown [options]="options" (contextmenu)="$event.stopPropagation();" formControlName="noOfRowDisplayed" [placeholder]="'Select'" [className]="'persoanal-settings'"></app-dropdown>
+          </div>
+        </div>
+        <!-- Header end -->
+        <div class="row">
+          <!-- Desk settings started -->
+          <div class="col-md-4 pr-0">
+            <app-pm-card [title]="'Desk Settings'">
+              <div class="d-flex flex-column">
+                <div class="card-content-title">Desk Choice</div>
+
+              </div>
+              <div class="d-flex justify-content-start">
+                <div class="py-2 pr-2">Search Panel</div>
+                <div class="p-2">
+                  <app-checkbox [label]="'Type 0'" (contextmenu)="$event.stopPropagation();" formControlName="Type1"></app-checkbox>
+                  <app-checkbox [label]="'Type 1'" (contextmenu)="$event.stopPropagation();" formControlName="Type2"></app-checkbox>
+                  <app-checkbox [label]="'Type 2'" (contextmenu)="$event.stopPropagation();" formControlName="Type3"></app-checkbox>
+                  <app-checkbox [label]="'Type 3'" (contextmenu)="$event.stopPropagation();" formControlName="Type4"></app-checkbox>
+                  <app-checkbox [label]="'Allow default desk by depertment code'" (contextmenu)="$event.stopPropagation();" formControlName="AllDefaultTask"></app-checkbox>
+                </div>
+              </div>
+            </app-pm-card>
+          </div>
+          <!-- Desk settings end -->
+          <!-- Other settings started -->
+
+          <div class="col-md-8">
+            <app-pm-card [title]="'Other Settings'">
+              <div class="d-flex flex-column">
+                <div class="card-content-title">Desk Choice</div>
+                <div class="d-flex justify-content-start other-settings">
+                  <div class="p-2 label">Host - printer (4 digit B-number)</div>
+                  <div class="form-group">
+                    <input (contextmenu)="$event.stopPropagation();" formControlName="hostPrinter" min="0" type="number" class="form-control">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-start other-settings">
+                  <div class="p-2 label">Maximum number of rows to select</div>
+                  <div class="form-group">
+                    <input (contextmenu)="$event.stopPropagation();" formControlName="maxNumofRows" min="0" type="number" class="form-control">
+                  </div>
+                </div>
+                <app-checkbox (contextmenu)="$event.stopPropagation();" formControlName="soptAccordingToFCurrency" [label]="'Spot value date praposal according to foregion currency (Default: calandar for functional currency of user BU)'"></app-checkbox>
+                <app-checkbox (contextmenu)="$event.stopPropagation();" formControlName="soptAccordingToLastEntry" [label]="'Spot value date praposal according to last entry'"></app-checkbox>
+                <app-checkbox (contextmenu)="$event.stopPropagation();" formControlName="isShowAbbreviation" [label]="'Show abbreviation in German'"></app-checkbox>
+              </div>
+            </app-pm-card>
+
+          </div>
+          <!-- Other settings started -->
+
+        </div>
+      </div>
+
+    </form>
+    <!-- Action bar started -->
+    <div class="d-flex justify-content-between action-panel">
+      <div class="p-2"></div>
+      <div class="p-2">
+        <a class="btn btn-action mr-1" (click)="save()"><strong>F3</strong>&nbsp;=&nbsp;Save</a>
+        <a class="btn btn-action ml-1" (click)="reset()"><strong>F5</strong>&nbsp;=&nbsp;Reset</a>
+
+      </div>
+      <div class="p-2">
+        <a class="btn btn-action" (click)="back()"><strong>F12</strong>&nbsp;=&nbsp;Back</a>
+      </div>
+    </div>
+    <!-- Action bar end -->
+
+  </section>
+
+
+
+</app-layout>

@@ -1,0 +1,228 @@
+[
+    {
+        "request": {
+            "dealType": [
+                {
+                    "id": "1",
+                    "value": "Deal Type 1"
+                },
+                {
+                    "id": "2",
+                    "value": "Deal Type 2"
+                },
+                {
+                    "id": "3",
+                    "value": "Deal Type 3"
+                }
+            ],
+            "desksTypes": [
+                {
+                    "id": "1",
+                    "value": "Option 1"
+                },
+                {
+                    "id": "2",
+                    "value": "Option 2"
+                },
+                {
+                    "id": "3",
+                    "value": "Option 3"
+                },
+                {
+                    "id": "4",
+                    "value": "Option 4"
+                },
+                {
+                    "id": "5",
+                    "value": "Unallocated"
+                },
+                {
+                    "id": "6",
+                    "value": "Allocated"
+                }
+            ],
+            "quantities": [
+                {
+                    "id": "1",
+                    "value": "1"
+                },
+                {
+                    "id": "2",
+                    "value": "2"
+                },
+                {
+                    "id": "3",
+                    "value": "3"
+                }
+            ],
+            "codes": [
+                {
+                    "id": "0001",
+                    "name": "Metal name 1"
+                },
+                {
+                    "id": "0002",
+                    "name": "Metal name 2"
+                },
+                {
+                    "id": "0003",
+                    "name": "Metal name 3"
+                },
+                {
+                    "id": "0004",
+                    "name": "Metal name 4"
+                },
+                {
+                    "id": "0005",
+                    "name": "Metal name 5"
+                },
+                {
+                    "id": "0006",
+                    "name": "Metal name 6"
+                },
+                {
+                    "id": "0007",
+                    "name": "Metal name 7"
+                },
+                {
+                    "id": "0008",
+                    "name": "Metal name 8"
+                },
+                {
+                    "id": "0009",
+                    "name": "Metal name 9"
+                },
+                {
+                    "id": "0010",
+                    "name": "Metal name 10"
+                },
+                {
+                    "id": "0012",
+                    "name": "Metal name 5"
+                },
+                {
+                    "id": "0013",
+                    "name": "Metal name 6"
+                },
+                {
+                    "id": "0014",
+                    "name": "Metal name 7"
+                },
+                {
+                    "id": "0015",
+                    "name": "Metal name 8"
+                },
+                {
+                    "id": "0016",
+                    "name": "Metal name 9"
+                },
+                {
+                    "id": "0017",
+                    "name": "Metal name 10"
+                }
+            ],
+            "confirmationTypes": [
+                {
+                    "id": "1",
+                    "value": "Default"
+                },
+                {
+                    "id": "2",
+                    "value": "Confirm 2"
+                },
+                {
+                    "id": "3",
+                    "value": "Confirm 3"
+                }
+            ],
+            "paymentTypes": [
+                {
+                    "id": "1",
+                    "value": "SWIFT"
+                },
+                {
+                    "id": "2",
+                    "value": "Payment 1"
+                },
+                {
+                    "id": "3",
+                    "value": "Payment 3"
+                }
+            ],
+            "oversteerTypes": [
+                {
+                    "id": "1",
+                    "value": "Swift"
+                },
+                {
+                    "id": "2",
+                    "value": "oversteer 2"
+                },
+                {
+                    "id": "3",
+                    "value": "oversteer 3"
+                }
+            ],
+            "tradersTypes": [
+                {
+                    "id": "0001",
+                    "name": "Trader 1"
+                },
+                {
+                    "id": "0002",
+                    "name": "Trader 2"
+                },
+                {
+                    "id": "0003",
+                    "name": "Trader 3"
+                },
+                {
+                    "id": "0004",
+                    "name": "Trader 4"
+                },
+                {
+                    "id": "0005",
+                    "name": "Trader 5"
+                },
+                {
+                    "id": "0006",
+                    "name": "Trader 6"
+                },
+                {
+                    "id": "0007",
+                    "name": "Trader 7"
+                },
+                {
+                    "id": "0008",
+                    "name": "Trader 8"
+                },
+                {
+                    "id": "0009",
+                    "name": "Trader 9"
+                },
+                {
+                    "id": "00010",
+                    "name": "Trader 10"
+                }
+            ],
+            "currencyTypes": [
+                {
+                    "id": "0001",
+                    "name": "USD"
+                },
+                {
+                    "id": "0002",
+                    "name": "SGD"
+                },
+                {
+                    "id": "0003",
+                    "name": "EUR"
+                },
+                {
+                    "id": "0004",
+                    "name": "AUD"
+                }
+            ]
+        }
+    }
+]

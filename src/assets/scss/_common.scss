@@ -1,0 +1,323 @@
+// All the common styles have implemented here 
+@import 'variables';
+* {
+    font-family: 'Helvetica';
+    font-weight: 400;
+    font-style: normal;
+}
+
+*:focus {
+    outline: 0;
+    -webkit-appearance: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+section {
+    width: 100%;
+    padding: 20px 30px 0 30px;
+    background-color: $body-color;
+    font-size: $regular-font-size;
+    background-color: $body-color;
+}
+
+h1 {
+    font-size: $h1-font-size;
+    margin-bottom: 10px;
+    color: $content-text-black;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+h2 {
+    font-size: $h2-font-size;
+    &.page-title {
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+h4 {
+    font-size: $h4-font-size;
+}
+
+h5 {
+    font-size: $h5-font-size;
+}
+
+.general-font-size {
+    font-size: 12px;
+}
+
+.gray-text {
+    color: $gray-text;
+}
+
+.bold-text {
+    font-weight: 600;
+}
+
+.normal-font {
+    font-weight: 400;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+.label-text {
+    font-size: $regular-font-size;
+    font-weight: bold;
+}
+
+.label-text-blue {
+    color: $label-dark-blue;
+    font-size: $h4-font-size;
+    font-weight: 500;
+}
+
+// Overide bootstrap formcontrol styles
+.form-group {
+    margin-bottom: 10px;
+    .form-control {
+        height: 30px;
+        font-size: $regular-font-size;
+        margin-bottom: 0;
+        padding: 10px;
+        border: 1px solid $border-color;
+        border-radius: 2px;
+        input {
+            outline: none;
+        }
+    }
+    .form-control[readonly] {
+        background-color: #F1F1F1;
+    }
+    .form-control:disabled {
+        background-color: #F1F1F1;
+    }
+}
+
+.form-control-div {
+    background-color: #F9F9F9;
+    background-color: $body-color;
+    border: 1px solid $border-color;
+    padding: 6px 10px;
+    line-height: 1.3;
+}
+
+// Action panel start
+.action-panel {
+    border-top: 1px solid #C8C1BC;
+    background-color: #F9F9F9;
+}
+
+.btn {
+    &.btn-action {
+        font-size: 12px;
+        border: 1px solid #C8C1BC;
+        color: #265C89;
+        min-width: 80px;
+        height: 30px;
+        strong {
+            font-weight: 700;
+        }
+    }
+}
+
+// Action panel start
+// This classes used to set width of different size of inputs of forms
+.pmw-500 {
+    width: 500px;
+}
+
+.pmw-400 {
+    width: 400px;
+}
+
+.pmw-350 {
+    width: 350px;
+}
+
+.pmw-200 {
+    width: 200px;
+}
+
+.pmw-180 {
+    width: 180px;
+}
+
+.pmw-160 {
+    width: 160px;
+}
+
+.pmw-150 {
+    width: 150px;
+}
+
+.pmw-145 {
+    width: 145px;
+}
+
+.pmw-125 {
+    width: 125px;
+}
+
+.pmw-100 {
+    width: 100px;
+}
+
+.pmw-90 {
+    width: 90px;
+}
+
+.pmw-80 {
+    width: 80px;
+}
+
+.pmw-65 {
+    width: 65px;
+}
+
+.pmw-45 {
+    width: 45px;
+    min-width: 30px;
+}
+
+.pmw-40 {
+    width: 40px;
+}
+
+.pmw-30 {
+    width: 30px;
+}
+
+.pmw-20 {
+    width: 20px;
+}
+
+.mini-legnth-input {
+    width: 85px;
+}
+
+.tiny-length-imput {
+    width: 60px;
+}
+
+.midmini-legnth-input {
+    width: 100px;
+}
+
+.mid-legnth-input {
+    width: 222px;
+}
+
+.long-legnth-input {
+    width: 250px;
+}
+
+.form-group {
+    .input-disable-mini {
+        height: 60px;
+    }
+    .input-disable-large {
+        height: 80px;
+    }
+    .fixed-legnth-disable {
+        width: 305px;
+    }
+}
+
+.text-label-width {
+    width: 80px;
+}
+
+.label-text-sell {
+    color: #BE5061;
+}
+
+.label-text-buy {
+    color: #79A165;
+}
+
+// Common Color Classes
+.gray-text {
+    color: $gray-text;
+}
+
+//Bootstrap Modal stype overide
+/deep/.modal {
+    .modal-dialog {
+        .modal-content {
+            border-radius: 6px;
+            border: 2px solid #7898B3;
+        }
+    }
+}
+
+/deep/.modal-backdrop {
+    background-color: rgba(248, 248, 248, 0.7);
+    .show {
+        opacity: 0;
+    }
+}
+
+.modal-header {
+    color: #fff;
+    background-color: #7898B3;
+    padding: 5px 20px;
+    font-weight: bold;
+    height: 30px;
+    font-size: $regular-font-size;
+    .close {
+        margin: 0;
+        padding: 0;
+        .close-btn {
+            right: 5px;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('/assets/i/close-box.svg');
+            background-size: 20px 20px;
+        }
+    }
+}
+
+// Progress bar
+/deep/.pregress-bar {
+    background: rgba(248, 248, 248, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1090;
+    outline: 0;
+    .loader-content {
+        text-align: center;
+        display: inline-block;
+        margin: 0 auto;
+        .ptext {
+            font-weight: bold;
+            font-size: 12px;
+            color: #666666
+        }
+    }
+}
+
+// Error
+.error {
+    background-color: #E1BAB4 !important;
+}
+
+.warning-text {
+    color: #ED8A17;
+}
+.error-text {
+    color: #CE4347;
+}

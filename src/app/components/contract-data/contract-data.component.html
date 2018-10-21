@@ -1,0 +1,186 @@
+<section>
+  <div class="contract-data-block">
+    <form (ngSubmit)="onSubmit()" [formGroup]="contractFrom">
+      <div class="row">
+
+        <div class="col col-9">
+
+
+          <!-- Metal and Currency Cards -->
+          <div class="row">
+            <div class="col col-metal pr-0">
+              <!-- Metal Card -->
+              <app-pm-card [title]="'Metal'">
+
+                <div class="d-flex justify-content-start align-content-end">
+                  <div class="label-text">Code</div>
+                  <div class="form-group mini-legnth-input">
+                    <app-input-popup (contextmenu)="$event.stopPropagation();" formControlName="orderCode" [name]="'orderCode'" ngDefaultControl type="number"
+                      [placeholder]="'Add'" [padNumber]="4" [required]="true" [isReadonly]="isReadOnly" [lookupData]="codes"
+                      (add)="onInputAdd('orderCode',$event)" [isErrorClass]="formControls.orderCode.touched && formControls.orderCode.invalid || formControls.orderCode.invalid && isSubmitted"
+                      [isTextInputDisabled]="true"></app-input-popup>
+                  </div>
+                  <div class="form-group flex-fill">
+                    <div class="form-control-div input-disable-mini" [innerHTML]="contractFrom.value.orderDes">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                  <div class="label-text">Quantity</div>
+                  <div class="form-group mr-1 mid-legnth-input mb-0">
+                    <input class="form-control error-focus" (contextmenu)="$event.stopPropagation();" formControlName="quantity" type="text" mask="000000000000000"
+                      name="quantity" required id="#quantity" (blur)="onBlurInput()" placeholder="Enter" [readOnly]="isReadOnly"
+                      [ngClass]="{'error': formControls.quantity.touched && formControls.quantity.invalid || formControls.quantity.invalid && isSubmitted}">
+                  </div>
+                  <div class="form-group  tiny-length-imput mb-0">
+                    <input type="text" class="form-control" disabled>
+                  </div>
+                </div>
+              </app-pm-card>
+            </div>
+            <div class="col col-currency pr-0">
+              <!-- Currency Card -->
+              <app-pm-card [title]="'Currency'">
+
+                <div class="d-flex">
+                  <div class="label-text">Code</div>
+                  <div class="form-group midmini-legnth-input">
+                    <app-input-popup (contextmenu)="$event.stopPropagation();" formControlName="currencyCode" ngDefaultControl [placeholder]="'Add'" [required]="true"
+                      [maxLength]="4" [isReadonly]="isReadOnly" [lookupData]="currencyTypes" (add)="onInputAdd('currencyCode',$event)"
+                      [isErrorClass]="formControls.currencyCode.touched && formControls.currencyCode.invalid || formControls.currencyCode.invalid && isSubmitted"
+                      [isTextInputDisabled]="true"></app-input-popup>
+                  </div>
+                  <div class="form-group flex-fill">
+                    <input type="text" class="form-control" disabled>
+                  </div>
+                </div>
+
+                <div class="d-flex">
+                  <div class="label-text pr-1">Rate</div>
+                  <div class="form-group midmini-legnth-input mb-0">
+                    <input type="number" (contextmenu)="$event.stopPropagation();" formControlName="rate" class="form-control" name="rate" id="#rate" placeholder="Enter"
+                      [readOnly]="isReadOnly">
+                  </div>
+                  <div class="form-group mini-legnth-input mb-0">
+                    <input type="text" class="form-control" disabled>
+                  </div>
+                </div>
+
+              </app-pm-card>
+            </div>
+          </div>
+
+          <!-- Spot Card and Empty Space -->
+          <div class="row">
+            <div class="col col-spot pr-0">
+              <!-- Spot Card -->
+              <app-pm-card [title]="'Spot'">
+
+                <div class="d-flex mb-2">
+                  <div class="label-text">Value Date</div>
+                  <div class="">
+                    <app-date-picker (contextmenu)="$event.stopPropagation();" formControlName="date" ngDefaultControl (dateTimeChange)="changeDateTime($event)"
+                      placeholder="DD.MM.YYYY" [defaultDate]="today" name="date" type="text" [isDate]=true [value]="today"
+                      className="date-input" [isReadOnly]="isReadOnly"></app-date-picker>
+                  </div>
+                </div>
+
+                <div class="d-flex">
+                  <div class="label-text mr-5 pr-4">Price</div>
+                  <div class="form-group flex-fill">
+                    <input type="number" (contextmenu)="$event.stopPropagation();" formControlName="price" class="form-control error-focus" placeholder="" (blur)="onBlurInput()"
+                      [readOnly]="isReadOnly" [ngClass]="{'error': formControls.price.touched && formControls.price.invalid || formControls.price.invalid && isSubmitted}">
+                  </div>
+                  <div class="form-group  mini-legnth-input">
+                    <app-dropdown [options]="quantities" (contextmenu)="$event.stopPropagation();" formControlName="priceQuantity" [placeholder]="''" [isReadOnly]="isReadOnly"></app-dropdown>
+                  </div>
+                </div>
+
+                <div class="d-flex align-content-start">
+                  <div class="label-text mr-4">CCY Amount</div>
+                  <div class="form-group pl-1 flex-fill mb-0">
+                    <input type="number" class="form-control" disabled>
+                  </div>
+                  <div class="form-group mini-legnth-input mb-0">
+                    <input type="text" class="form-control" disabled>
+                  </div>
+                </div>
+
+              </app-pm-card>
+            </div>
+            <div class="col pl-0">
+              <!-- Empty space -->
+            </div>
+          </div>
+
+          <!-- Debit Currency and Credit Metal Cards -->
+          <div class="row">
+            <div class="col col-debit pr-0">
+              <!-- Debit Currency Card -->
+              <app-pm-card [title]="'Debit Currency'">
+
+                <div class="d-flex justify-content-start">
+                  <div class="label-text pr-3">Account</div>
+                  <div class="form-group long-legnth-input">
+                    <input type="text" (contextmenu)="$event.stopPropagation();" formControlName="debitAccount" maxlength="19" mask="AAAA-AAAAAAA-AA-AAA" class="form-control error-focus"
+                      [readOnly]="isReadOnly" (blur)="onBlurInput()" [ngClass]="{'error': formControls.debitAccount.touched && formControls.debitAccount.invalid || formControls.debitAccount.invalid && isSubmitted}">
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                  <div class="label-text pr-5"></div>
+                  <div class="form-group flex-fill ml-3 mb-0">
+                    <div class="form-control-div input-disable-large" [innerHTML]="contractFrom.value.debitOrderDes">
+                    </div>
+                  </div>
+                </div>
+
+              </app-pm-card>
+            </div>
+
+            <div class="col col-credit pr-0">
+              <!-- Credit Metal Card -->
+              <app-pm-card [title]="'Credit Metal'" [className]="className">
+
+                <div class="d-flex">
+                  <div class="label-text">Account</div>
+                  <div class="form-group long-legnth-input">
+                    <input type="text" (contextmenu)="$event.stopPropagation();" formControlName="creditAccount" mask="AAAA-AAAAAAA-AA-AAA" required class="form-control error-focus"
+                      [readOnly]="isReadOnly" (blur)="onBlurInput()" [ngClass]="{'error': formControls.creditAccount.touched && formControls.creditAccount.invalid || formControls.creditAccount.invalid && isSubmitted}">
+                  </div>
+                </div>
+
+                <div class="d-flex">
+                  <div class="label-text pr-5"></div>
+                  <div class="form-group flex-fill mb-0">
+                    <div class="form-control-div input-disable-large" [innerHTML]="contractFrom.value.creditOrderDes">
+                    </div>
+                  </div>
+                </div>
+
+              </app-pm-card>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Buy/Sell Card -->
+        <div class="col col-3">
+          <app-pm-card [title]="buyOrSellTitle" [className]="className">
+            <div class="d-flex flex-column">
+              <div class="label-text-blue align-self-center" [ngClass]="{ 'label-text-buy' : buyOrSellType === buy ,'label-text-sell' : buyOrSellType === sell}">Kassa
+                Verkauf
+                Buchmetall</div>
+              <div class="buy-sell-btn align-self-center">
+                <a class="btn btn-action" (click)="onBuyOrSell()"><span class="font-weight-bold">F9</span>=Buy/Sell</a>
+              </div>
+            </div>
+
+          </app-pm-card>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</section>

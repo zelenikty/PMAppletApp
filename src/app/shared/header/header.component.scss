@@ -1,0 +1,51 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+header {
+    background-color: $header-color;
+    color: $content-text-white;
+    font-size: $regular-font-size;
+    height: 25px;
+    .d-flex {
+        letter-spacing: 0.5px;
+        .menu-icon {
+            background-image: url("../../../assets/i/header-menu.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 16px 16px;
+        }
+        .user-icon,
+        .time-icon,
+        .et-icon {
+            background-repeat: no-repeat;
+            background-position: left;
+        }
+        .user-icon {
+            background-image: url("../../../assets/i/header-profilepic.svg");
+            background-size: 16px 16px;
+        }
+        .time-icon {
+            background-image: url("../../../assets/i/header-clock.svg");
+            background-size: 16px 16px;
+        }
+        .et-icon {
+            background-image: url("../../../assets/i/header-et.svg");
+            background-size: 16px 16px;
+        }
+    }
+    
+}
+
+@media (max-width: 1024px) {
+   
+        .user-icon,
+        .time-icon,
+        .et-icon {
+          margin-right: 10px
+        }
+        span {
+            margin-left: 10px;
+        }
+        .menu-icon {
+            background-size: 10px 10px;
+        }
+}

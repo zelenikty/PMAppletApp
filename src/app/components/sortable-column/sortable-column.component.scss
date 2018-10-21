@@ -1,0 +1,30 @@
+.asc {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        right: 5px;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        width: 8px;
+        height: 8px;
+        background: url('/assets/i/dropdown-arrow.svg');
+        background-size: 8px 8px;
+    }
+}
+.desc {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        right: 5px;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        width: 8px;
+        height: 8px;
+        background: url('/assets/i/sort-desc.svg');
+        background-size: 8px 8px;
+    }
+}

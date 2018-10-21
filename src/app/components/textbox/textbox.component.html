@@ -1,0 +1,14 @@
+<!-- TEXTBOX -->
+<div class="textbox-wrapper {{className}}">
+  <span class="search-icon" *ngIf="isSearch"></span>
+  <input
+  #inputEl
+    [type]="type"
+    [name]="name"
+    class="text-input-box"
+    [placeholder]="placeholder"
+    (keyup)="onKey(inputEl.value)"
+    [value]="value"
+  >
+</div>
+<!-- TEXTBOX END -->

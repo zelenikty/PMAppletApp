@@ -1,0 +1,33 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+// Repetition Tab Styles
+section {
+    padding-top: 0;
+    .repetition-block {
+        background-color: $block-color;
+        padding: 15px 20px;
+        min-height: 400px;
+        border-radius: 5px;
+
+        // Customeize widths for input fields and labels
+        .pmw-120 {
+            min-width: 10%;
+        }
+        .pmw-150 {
+            min-width: 15%;
+        }
+        .pmw-160 {
+            min-width: 16%;
+        }
+        .pmw-350 {
+            min-width: 30%;
+        }
+
+        .input-mid-length {
+            width: 150px;
+        }
+    }
+}
+
+

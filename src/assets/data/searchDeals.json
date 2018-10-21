@@ -1,0 +1,184 @@
+[
+    {
+        "request": {
+            "brandNames": [
+                {
+                    "id": "1",
+                    "value": "Brand 1"
+                },
+                {
+                    "id": "2",
+                    "value": "Brand 2"
+                },
+                {
+                    "id": "3",
+                    "value": "Brand 3"
+                }
+            ],
+            "types": [
+                {
+                    "id": "1",
+                    "value": "Type 1"
+                },
+                {
+                    "id": "2",
+                    "value": "Type 2"
+                },
+                {
+                    "id": "3",
+                    "value": "Type 3"
+                }
+            ],
+            "waiveredStatus": [
+                {
+                    "id": "1",
+                    "value": "Yes"
+                },
+                {
+                    "id": "2",
+                    "value": "No"
+                }
+            ],
+            "status": [
+                {
+                    "id": "1",
+                    "value": "Pending"
+                },
+                {
+                    "id": "2",
+                    "value": "Proceeded"
+                },
+                {
+                    "id": "3",
+                    "value": "Status 3"
+                }
+            ],
+            "statusDetails": [
+                {
+                    "id": "1",
+                    "value": "Enterd"
+                },
+                {
+                    "id": "2",
+                    "value": "SIpdated Entered"
+                },
+                {
+                    "id": "3",
+                    "value": "Status detail 3"
+                }
+            ],
+            "giftTypes": [
+                {
+                    "id": "1",
+                    "value": "Type 1"
+                },
+                {
+                    "id": "2",
+                    "value": "Type 2"
+                },
+                {
+                    "id": "3",
+                    "value": "Type 3"
+                }
+            ],
+            "orderTypes": [
+                {
+                    "id": "1",
+                    "value": "Order 1"
+                },
+                {
+                    "id": "2",
+                    "value": "Order 2"
+                },
+                {
+                    "id": "3",
+                    "value": "Order 3"
+                },
+                {
+                    "id": "4",
+                    "value": "Order 4"
+                },
+                {
+                    "id": "5",
+                    "value": "Order 5"
+                },
+                {
+                    "id": "6",
+                    "value": "Order 6"
+                },
+                {
+                    "id": "7",
+                    "value": "Order 7"
+                },
+                {
+                    "id": "8",
+                    "value": "Order 8"
+                }
+            ],
+            "selections": [
+                {
+                    "id": "1",
+                    "value": "Selection 1"
+                },
+                {
+                    "id": "2",
+                    "value": "Selection 2"
+                },
+                {
+                    "id": "3",
+                    "value": "Selection 3"
+                }
+            ],
+            "priceTypes": [
+                {
+                    "id": "1",
+                    "name": "Type 1"
+                },
+                {
+                    "id": "2",
+                    "name": "Type 2"
+                },
+                {
+                    "id": "3",
+                    "name": "Type 3"
+                },
+                {
+                    "id": "4",
+                    "name": "OZ"
+                }
+            ],
+            "currencyTypes": [
+                {
+                    "id": "0001",
+                    "name": "USD"
+                },
+                {
+                    "id": "0002",
+                    "name": "SGD"
+                },
+                {
+                    "id": "0003",
+                    "name": "EUR"
+                },
+                {
+                    "id": "0004",
+                    "name": "AUD"
+                }
+            ],
+            "productTypes": [
+                {
+                    "id": "1",
+                    "name": "Type 1"
+                },
+                {
+                    "id": "2",
+                    "name": "Type 2"
+                },
+                {
+                    "id": "3",
+                    "name": "Type 3"
+                }
+            ]
+        }
+    }
+]

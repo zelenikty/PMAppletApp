@@ -1,0 +1,19 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+// Single Search styles
+.single-search {
+    width: 100%;
+    height: calc(100vh - 65px);
+    padding: 13px 50px;
+
+    .search-content {
+        border-radius: 5px;
+        background-color: $body_bg;
+        padding: 0 20px;
+        height: calc(100vh - 162px);
+        
+    }
+
+    
+}

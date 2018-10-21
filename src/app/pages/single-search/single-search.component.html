@@ -1,0 +1,82 @@
+<app-layout>
+
+  <section class="single-search">
+    <h2 class="page-title mb-3">
+      Single Search
+    </h2>
+    <!-- Single search form -->
+    <div class="search-content">
+
+      <div class="d-flex align-items-center h-100">
+        <div class="d-flex justify-content-center w-100">
+          <form [formGroup]="searchForm">
+            <div class="d-flex flex-column">
+              <div class="py-2 px-0">
+                <h2>Placed Orders</h2>
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <div class="label-text pmw-100">Type</div>
+                <app-dropdown tabindex="0" formControlName="searchType" ngDefaultControl [placeholder]="'Select'" class="pmw-200 mr-2"
+                  [options]="orderTypes" [isReadOnly]="false"></app-dropdown>
+                <div class="form-group pmw-500 ml-auto mb-0">
+                  <input type="text" formControlName="branchName" class="form-control" readonly>
+                </div>
+
+              </div>
+              <div class="d-flex flex-row ">
+                <div class="label-text pmw-100">Contract No.</div>
+                <div class="form-group pmw-200 mb-0">
+                  <app-input-clear tabindex="0" formControlName="contactId" [isValid]="isFormValid" ngDefaultControl [className]="'form-control'"></app-input-clear>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <!-- Action bar started -->
+    <div class="d-flex justify-content-between action-panel">
+      <div class="p-2"></div>
+      <div class="p-2">
+        <a class="btn btn-action mr-1" (click)="show()"><strong>S</strong>&nbsp;=&nbsp;Show</a>
+        <a class="btn btn-action mr-1" (click)="verify(content)"><strong>V</strong>&nbsp;=&nbsp;Verify</a>
+        <a class="btn btn-action mr-1" (click)="delete(content)"><strong>D</strong>&nbsp;=&nbsp;Delete</a>
+        <a class="btn btn-action mr-1" (click)="cancel(content)"><strong>C</strong>&nbsp;=&nbsp;Cancel</a>
+        <a class="btn btn-action mr-1" (click)="modify(content)"><strong>M</strong>&nbsp;=&nbsp;Modify</a>
+        <a class="btn btn-action mr-1" (click)="repeat(content)"><strong>R</strong>&nbsp;=&nbsp;Repeat</a>
+      </div>
+      <div class="p-2">
+        <a class="btn btn-action" (click)="goBackToMainMenu()"><strong>F12</strong>&nbsp;=&nbsp;Back</a>
+      </div>
+    </div>
+    <!-- Action bar end -->
+
+  </section>
+  <ng-template #content let-modal>
+      <div class="modal-header">
+        <div class="modal-title" id="modal-basic-title">Collateral Management</div>
+        <button type="button" class="close" aria-label="Close" (click)="deleteCancel()">
+          <span class="close-btn"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex flex-column align-items-center h-100">
+          <div class="normal-font general-font-size p-3 mb-3">{{confirmMsg}}</div>
+          <div class="d-flex justify-content-center w-100">
+            <div class="d-flex justify-content-between ">
+              <div class="p-2 mb-3">
+                <a class="btn btn-action mr-1" (click)="deleteConfirm()"><strong>Y</strong>&nbsp;=&nbsp;Yes</a>
+                <a class="btn btn-action mr-1" (click)="deleteCancel()"><strong>N</strong>&nbsp;=&nbsp;No</a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </ng-template>
+
+
+</app-layout>

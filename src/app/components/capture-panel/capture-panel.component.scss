@@ -1,0 +1,140 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+// Capture Panel Styles
+.capture-panel {
+    background-color: $body_bg;
+    padding: 10px 50px 15px 50px;
+    font-size: $regular-font-size;
+    height: 225px;
+    .sub-title {
+        height: 30px;
+    }
+    .btn-capturing {
+        border: 2px solid #424DB6;
+        color: #424DB6;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+        height: 40px;
+    }
+
+    // Counterparty Block Styles
+    .counterparty {
+        border: 1px solid $border-color;
+        background-color: #F9F9F9;
+        .title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .cap-description {
+            border: 1px solid $border-color;
+            background-color: #F1F1F1;
+            height: 94px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+    }
+    textarea {
+        overflow-y: scroll;
+        resize: none;
+        &.form-control {
+            height: 96px;
+        }
+    }
+
+    // Right Side Panel Styles (mini form in right side of the capture panel)
+    .right-panel {
+        .label-text {
+           max-width: 70px;
+        }
+        .text-area {
+            border: 1px solid $border-color;
+            background-color: #F1F1F1;
+            height: 64px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+    }
+    
+}
+
+.col-md-7 {
+    width: 55%;
+}
+.col-md-5 {
+    width: 45%;
+}
+
+
+// @media (max-width: 1024px) {
+//     .capture-panel {
+//         height: 100%;
+//     }
+//     form {
+//        .row {
+//            .col-md-6 {
+//                width: 100%;
+//                .d-flex {
+//                 width: 100%;
+//                 .flex-row {
+//                     width: 100%;
+//                      .tab-capture {
+//                          width: 100%;
+//                          justify-content: baseline;
+//                          max-height: 100px;
+//                      }
+//                  }
+//                }
+              
+//                .counterparty {
+//                 width: 100%;
+//                 margin-bottom: 20px;
+//                 padding-bottom: 10px;
+//                } 
+//            }
+//        }
+//    }
+
+//    .right-panel {
+//        .tab-width {
+//            width: 100%;
+//        }
+//        .flex-row {
+//            width: 100%;
+//        }
+//    }
+
+//    .cap-description {
+//        margin-top: 8px;
+//    }
+//    .tab-label {
+//        margin-left: 5px;
+//    }
+   
+
+//   }
+
+  .pmw-125{
+      max-width: 125px;
+      min-width: 60px;
+  }
+
+  .trader-lbl{
+      width: 165px;
+  }
+  .desk-dp{
+      max-width: 125px;
+      min-width: 100px;
+  }
+  .tab-label-min{
+      width:42px;
+  }
+  .label-text-mid{
+      width:70px;
+  }
+
+  
+  

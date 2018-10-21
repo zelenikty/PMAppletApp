@@ -1,0 +1,12 @@
+<!-- Input popup -->
+<div class="input-popup-wrapper {{className}} {{ (value?.length > 0) ? 'dirty-input':''}} {{(isValid ? '': 'invalid' )}}" [ngClass]="{'error':isErrorClass}"
+    (contextmenu)="$event.stopPropagation();">
+  <div class="m-0 d-flex flex-row w-100 ">
+    <div class="m-0 p-0 w-100">
+      <input type="text" class="text-input-box" [(ngModel)]="value" [placeholder]="placeholder" [required]="required"
+        [maxlength]="maxLength" [appPadNumber]="padNumber" [name]="name" (keyup)="onKey(value)">
+    </div>
+    <div *ngIf="value?.length > 0" class="button-icon" (click)="onClear()"></div>
+
+  </div>
+</div>

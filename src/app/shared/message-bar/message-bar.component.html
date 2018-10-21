@@ -1,0 +1,40 @@
+<footer>
+  <div class="message-bar">
+    <div *ngIf="error" class="error">
+      <span>Error: </span>
+      <span *ngIf="error.key === 'cpId'">
+        Enter the counterparty!
+      </span>
+      <span *ngIf="error.key === 'orderCode'">
+        Enter the metal of "Contract Data" tab!
+      </span>
+      <span *ngIf="error.key === 'quantity'">
+        Enter the quantity of "Contract Data" tab!
+      </span>
+      <span *ngIf="error.key === 'currencyCode'">
+        Enter the currency of "Contract Data" tab!
+      </span>
+      <span *ngIf="error.key === 'price'">
+        Enter the price of "Contract Data" tab!
+      </span>
+      <span *ngIf="error.key === 'debitAccount'">
+        Enter the debit account of "Contract Data" tab!
+      </span>
+      <span *ngIf="error.key === 'creditAccount'">
+        Enter the credit account of "Contract Data" tab!
+      </span>
+      <span *ngIf="error.key === 'payDebitAccount'">
+        Enter the debit account of "Payment Delivery" tab!
+      </span>
+      <span *ngIf="error.key === 'payCreditAccount'">
+        Enter the credit account of "Payment Delivery" tab!
+      </span>
+    </div>
+    <div *ngIf="!error && warning">
+      <span>Warning: {{ warning }}</span>
+    </div>
+    <div *ngIf="serverError" class="error">
+      Server Error: {{serverError.message}}
+    </div>
+  </div>
+</footer>

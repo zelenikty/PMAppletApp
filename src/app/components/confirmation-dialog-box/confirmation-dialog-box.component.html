@@ -1,0 +1,18 @@
+<!-- Model box -->
+<div class="model-bg"></div>
+<div class="model-box" *ngIf="dialogType === 'order'">
+  <!-- MODEL-TITLE -->
+  <div class="model-title">
+    <span class="model-txt">Collateral Management</span>
+    <span class="model-icon" (click)="cancel()">X</span>
+  </div>
+  <!-- MODEL BODY -->
+  <div class="model-body">
+    <p>Are you sure that you want to delete this order?</p>
+    <!-- MODEL BTN  -->
+    <div class="model-btn">
+      <a href="javascript:;" class="blue-btn" (click)="confirm()">Y = Yes</a>
+      <a href="javascript:;" class="border-btn" (click)="cancel()">N = No</a>
+    </div>
+  </div>
+</div>

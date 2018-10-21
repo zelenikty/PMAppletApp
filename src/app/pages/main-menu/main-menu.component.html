@@ -1,0 +1,56 @@
+<app-layout [isDisplayFooter]="false">
+    
+    <section class="main-menu" >
+
+        <h1>Collateral Management</h1>
+        <h5 class="mt-0 gray-text">Main Menu</h5>
+
+
+
+        <div class="d-flex justify-content-center align-items-center  flex-wrap">
+
+            <div class="text-center">
+                <a [routerLink]="['/deal-type-selection']" class="menu-link">
+                    <div class="img-box">
+                        <span class="text-right">1</span>
+                        <div class="deal-image"></div>
+                    </div>
+                    <p>Deal Capture</p>
+                </a>
+            </div>
+
+            <div class="text-center">
+                <a [routerLink]="['/search-deals']" class="menu-link">
+                    <div class="img-box">
+                        <span class="text-right">2</span>
+                        <div class="search-image"></div>
+                    </div>
+                    <p>Search</p>
+                </a>
+            </div>
+
+            <div class="text-center">
+                <a [routerLink]="['/single-search']" class="menu-link">
+                    <div class="img-box img-box-single">
+                        <span class="text-right">3</span>
+                        <div class="single-search-image"></div>
+                    </div>
+                    <p>Single Search</p>
+                </a>
+            </div>
+
+            <div class="text-center">
+                <a [routerLink]="['/personal-settings']" class="menu-link">
+                    <div class="img-box img-box-settings">
+                        <span class="text-right">8</span>
+                        <div class="settings-image"></div>
+                    </div>
+                    <p>Settings</p>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+</app-layout>

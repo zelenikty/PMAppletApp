@@ -1,0 +1,112 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/common";
+
+// Main Menu Styles
+.main-menu {
+    width: 100%;
+    height: calc( 100vh - 25px);
+    padding: 20px 50px;
+    .d-flex {
+        width: 100%;
+        margin-top: 150px;
+        div {
+            width: 140px;
+            margin-right: 10px;
+
+            // Image Containing Box
+            .img-box {
+                width: 140px;
+                height: 110px;
+                border: 1px solid $border-color;
+                padding-top: 30px;
+                border-radius: 5px;
+                position: relative;
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+                
+                span {
+                    color: $header-color;
+                    font-weight: 500;
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                }
+
+                // Images
+                .deal-image {
+                    background-image: url("../../../assets/i/menu-deal-capture.svg");
+                    -webkit-transition: background-image 0.3s;
+                    transition: background-image 0.3s;
+                    background-size: 50px 50px;
+                }
+               
+                .search-image {
+                    background-image: url("../../../assets/i/menu-search.svg");
+                    -webkit-transition: background-image 0.3s;
+                    transition: background-image 0.3s;
+                    background-size: 50px 50px;
+                }
+               
+                .single-search-image {
+                    background-image: url("../../../assets/i/menu-single-search.svg");
+                    -webkit-transition: background-image 0.3s;
+                    transition: background-image 0.3s;
+                    background-size: 50px 50px;
+                }
+                
+                .settings-image {
+                    background-image: url("../../../assets/i/menu-settings.svg");
+                    -webkit-transition: background-image 0.3s;
+                    transition: background-image 0.3s;
+                    background-size: 50px 50px;
+                }
+                
+                .deal-image,
+                .search-image,
+                .single-search-image,
+                .settings-image {
+                    background-repeat: no-repeat;
+                    padding: 60px;
+                    position: absolute;
+                    left: 45px;
+                }
+            }
+
+            // Hover and Active State of Image Boxes
+            .img-box:hover,
+            .img-box:active {
+                background-color: $link-text-blue;
+                cursor: pointer;
+                .deal-image {
+                    background-image: url("../../../assets/i/menu-deal-capture-white.svg");
+                    background-size: 50px 50px;
+                }
+                .search-image {
+                    background-image: url("../../../assets/i/menu-search-white.svg");
+                    background-size: 50px 50px;
+                }
+                .single-search-image {
+                    background-image: url("../../../assets/i/menu-single-search-white.svg");
+                    background-size: 50px 50px;
+                }
+                .settings-image {
+                    background-image: url("../../../assets/i/menu-settings-white.svg");
+                    background-size: 50px 50px;
+                }
+                span {
+                    color: $content-text-white;
+                }
+            }
+
+            p {
+                font-size: $h5-font-size;
+                color: $header-color;
+                font-weight: 500;
+                margin-top: 10px;
+            }
+        }
+        div:last-child {
+            margin-right: 0;
+        }
+    }
+}

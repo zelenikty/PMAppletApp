@@ -1,0 +1,33 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/common';
+
+// Technical Info Tab Styles
+section {
+    padding-top: 0;
+    .technical-infos-block {
+        background-color: $block-color;
+        padding: 15px 20px;
+        border-radius: 5px;
+
+        .row {
+            .col-5 {
+                .row {
+                    min-height: 137px;
+                }
+            }
+            .col-7 {
+                
+                .form-group {
+                    .form-control {
+                        min-height: 200px;
+                    }  
+                }
+            }
+        }
+        
+    }
+    .bottom-border {
+        border-bottom: 1px solid $border-color;
+    }   
+}
+
