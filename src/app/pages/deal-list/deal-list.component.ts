@@ -19,7 +19,7 @@ export class DealListComponent implements OnInit {
   @ViewChild('content') content: ElementRef;
   tblWidth: any;
   tblWidthInitial: any;
-  dealList: any;
+  dealList: Array<any>;
   activeCode: any;
   key: string;
   selectItem: any;
@@ -35,6 +35,8 @@ export class DealListComponent implements OnInit {
   isToBeDone: boolean;
   confirmMsg: string;
   columnNames: any[] = [];
+  indexOfSourceColumn: number;
+  sourceColumn: string;
 
   constructor(
     private dealListService: DealListService,
@@ -82,6 +84,19 @@ export class DealListComponent implements OnInit {
       this.dealList = this.dealList.sort(
         (a, b) => (a[event.sortColumn] < b[event.sortColumn]) ? 1 : ((b[event.sortColumn] < a[event.sortColumn]) ? -1 : 0));
     }
+  }
+
+  /** Responsible for storing the information about the source column upon repositioning the columns */
+  dragColumn(event) {
+    this.sourceColumn = event.target.textContent;
+    this.indexOfSourceColumn = this.columnNames.indexOf(event.target.textContent);
+  }
+
+  /** Responsible for positioning the dragged column */
+  positionColumn(event) {
+    const indexOfTargetColumn = this.columnNames.indexOf(event.target.textContent);
+    this.columnNames.splice(this.indexOfSourceColumn, 1);
+    this.columnNames.splice(indexOfTargetColumn, 0, this.sourceColumn);
   }
 
   /**
