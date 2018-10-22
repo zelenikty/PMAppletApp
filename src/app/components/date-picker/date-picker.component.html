@@ -3,22 +3,19 @@
   <label class="m-0">
     <div class="m-0 d-flex flex-row">
         <div class="m-0 p-0 w-100">
-            <input
+          <input
             [type]="type"
             class="text-input-box"
             [(ngModel)]="value"
             [placeholder]="placeholder"
-            [owlDateTimeTrigger]="dt3"
-            [owlDateTime]="dt3"
             [name]="name"
-            [disabled]="isReadOnly"   
-            [appFormatDate]="value"  
+            [disabled]="isReadOnly"
+            [appFormatDate]="value"
+            (keyup.enter)="onEnter($event)"
           >
         </div>
         <div class="date-icon" *ngIf="isDate"></div>
       </div>
-
-    <owl-date-time [pickerType]="'calendar'" #dt3 (afterPickerClosed)="getDate($event)"></owl-date-time>
     <!-- {{value}} -->
   </label>
 </div>

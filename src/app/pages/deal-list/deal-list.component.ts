@@ -1,9 +1,9 @@
-import { Component, OnInit, ElementRef, ViewChild, HostListener, Renderer2 } from '@angular/core';
-import { DealListService } from '../../services/deal-list.service';
-import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { SpinnerService } from '../../services/spinner.service';
-import { Router } from '@angular/router';
-import { ExcelService } from 'src/app/services/excel.service';
+import {Component, OnInit, ElementRef, ViewChild, HostListener, Renderer2} from '@angular/core';
+import {DealListService} from '../../services/deal-list.service';
+import {NgbModal, NgbModalRef, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
+import {SpinnerService} from '../../services/spinner.service';
+import {Router} from '@angular/router';
+import {ExcelService} from 'src/app/services/excel.service';
 import * as JsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import * as $ from 'jquery';
@@ -147,7 +147,7 @@ export class DealListComponent implements OnInit {
         this.renderer.setStyle(this.parent, 'min-width', width + 'px', 1);
         this.renderer.setStyle(this.parent, 'max-width', width + 'px', 1);
         const index = $(this.parent).index() + 1;
-        $('#dataTable tr td:nth-child(' + index + ')').css({ 'min-width': width, 'max-width': width });
+        $('#dataTable tr td:nth-child(' + index + ')').css({'min-width': width, 'max-width': width});
       }
 
       setTimeout(() => {
@@ -161,46 +161,51 @@ export class DealListComponent implements OnInit {
   show() {
     this.router.navigate(['/display']);
   }
+
   /***  Verify button click or S press */
   verify() {
     if (this.modal && !this.hasOpenModal) {
       this.hasOpenModal = true;
       this.isToBeDone = true;
       this.confirmMsg = 'To be done in integration ';
-      this.confirmModel = this.modalService.open(this.modal, { centered: true });
+      this.confirmModel = this.modalService.open(this.modal, {centered: true});
     }
   }
+
   /***  Delete button click or S press*/
   delete() {
     if (this.modal && !this.hasOpenModal) {
       this.hasOpenModal = true;
       this.isDeleteConf = true;
       this.confirmMsg = 'Are you sure that you want to delete this order?';
-      this.confirmModel = this.modalService.open(this.modal, { centered: true });
+      this.confirmModel = this.modalService.open(this.modal, {centered: true});
     }
 
   }
+
   /***  Cancel button click or S press*/
   cancel() {
     if (this.modal && !this.hasOpenModal) {
       this.hasOpenModal = true;
       this.isDeleteConf = false;
       this.confirmMsg = 'Are you sure that you want to cancel this order?';
-      this.confirmModel = this.modalService.open(this.modal, { centered: true });
+      this.confirmModel = this.modalService.open(this.modal, {centered: true});
     }
   }
+
   /***  Modify button click or S press*/
   modify() {
     this.router.navigate(['/display']);
 
   }
+
   /***  Repeat button click or S press*/
   repeat() {
     if (this.modal && !this.hasOpenModal) {
       this.hasOpenModal = true;
       this.isToBeDone = true;
       this.confirmMsg = 'To be done in integration ';
-      this.confirmModel = this.modalService.open(this.modal, { centered: true });
+      this.confirmModel = this.modalService.open(this.modal, {centered: true});
     }
 
   }
@@ -209,6 +214,7 @@ export class DealListComponent implements OnInit {
   exportToExcel() {
     this.excelService.exportAsExcelFile(this.dealList, 'deallist');
   }
+
   /** Print to PDF */
   printPfd() {
     SpinnerService.showPreLoader();
@@ -306,7 +312,7 @@ export class DealListComponent implements OnInit {
         this.renderer.setStyle(this.parent, 'min-width', width + 'px', 1);
         this.renderer.setStyle(this.parent, 'max-width', width + 'px', 1);
         const index = $(this.parent).index() + 1;
-        $('#dataTable tr td:nth-child(' + index + ')').css({ 'min-width': width, 'max-width': width });
+        $('#dataTable tr td:nth-child(' + index + ')').css({'min-width': width, 'max-width': width});
       }
     });
     this.renderer.listen('body', 'mouseup', (event) => {
@@ -315,7 +321,6 @@ export class DealListComponent implements OnInit {
       }
     });
   }
-
 
 
 }

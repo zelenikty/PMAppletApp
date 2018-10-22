@@ -23,12 +23,12 @@ export class FormatDateDirective implements OnInit, OnChanges {
       if (value && value !== '') {
         const dArr = value.split('/');
         if (dArr && dArr.length === 3) {
-          const newDate = `${dArr[1]}.${dArr[0]}.${dArr[2]}`;
+          const newDate = `${dArr[0]}.${dArr[1]}.${dArr[2]}`;
           this.el.nativeElement.value = newDate;
         }
 
       } else {
-        this.el.nativeElement.value = 'Select';
+        this.el.nativeElement.value = '';
       }
     }, 1);
 
@@ -44,11 +44,11 @@ export class FormatDateDirective implements OnInit, OnChanges {
       if (this.appFormatDate) {
         const dArr = this.appFormatDate.split('-');
         if (dArr.length === 3) {
-          const newDate = `${dArr[1]}.${dArr[2]}.${dArr[0]}`;
+          const newDate = `${dArr[2]}.${dArr[1]}.${dArr[0]}`;
           this.el.nativeElement.value = newDate;
         }
       } else {
-        this.el.nativeElement.value = 'Select';
+        this.el.nativeElement.value = '';
       }
 
     }, 1);

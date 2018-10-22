@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { OWL_DATE_TIME_FORMATS, OWL_DATE_TIME_LOCALE, OwlDateTimeModule } from 'ng-pick-datetime';
+import { OwlMomentDateTimeModule } from 'ng-pick-datetime-moment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContextMenuModule } from 'ngx-contextmenu';
-import {NgxMaskModule} from 'ngx-mask';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxMaskModule } from 'ngx-mask';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,6 +51,16 @@ import { SortableTableDirective } from './directives/sortable-table.directive';
 import { InputClearComponent } from './components/input-clear/input-clear.component';
 import { SortableColumnComponent } from './components/sortable-column/sortable-column.component';
 
+const MOMENT_FORMATS_LOCALE = {
+  parseInput: 'DD.MM.YYYY',
+  fullPickerInput: 'DD.MM.YYYY LT',
+  datePickerInput: 'DD.MM.YYYY',
+  timePickerInput: 'LT',
+  monthYearLabel: 'MMM YYYY',
+  dateA11yLabel: 'LL',
+  monthYearA11yLabel: 'MMMM YYYY',
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,7 +103,7 @@ import { SortableColumnComponent } from './components/sortable-column/sortable-c
     JavaConsoleComponent,
     SortableColumnComponent,
     SortableTableDirective,
-    InputClearComponent,
+    InputClearComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +112,7 @@ import { SortableColumnComponent } from './components/sortable-column/sortable-c
     FormsModule,
     ReactiveFormsModule,
     OwlDateTimeModule,
-    OwlNativeDateTimeModule,
+    OwlMomentDateTimeModule,
     BrowserAnimationsModule,
     NgbModule,
     ContextMenuModule.forRoot({
@@ -109,7 +120,11 @@ import { SortableColumnComponent } from './components/sortable-column/sortable-c
     }),
     NgxMaskModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    { provide: OWL_DATE_TIME_LOCALE, useValue: 'gb' },
+    { provide: OWL_DATE_TIME_FORMATS, useValue: MOMENT_FORMATS_LOCALE },
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
